@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+<center>
+  <h1>スタッフ一覧</h1>
+</center>
+
+<table>
+  <thead>
+    <tr>
+      <th>スタッフ番号</th>
+      <th>名前</th>
+      <th>性別</th>
+      <th>年齢</th>
+      <th>携帯番号</th>
+      <th>メールアドレス</th>
+      <th>役職</th>
+      <th>在職ステータス</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @staffs.each do |staff| %>
+      <tr>
+        <td><%= staff.id %></td>
+        <td><%= staff.name %></td>
+        <td><%= staff.sex_text %></td>
+        <td><%= staff.age %></td>
+        <td><%= staff.phone_num %></td>
+        <td><%= staff.mail %></td>
+        <td><%= staff.role_text %></td>
+        <td><%= staff.status_text %></td>
+        <td><%= link_to '詳細', staff %></td>
+        <td><%= link_to '編集', edit_staff_path(staff) %></td>
+        <td><%= link_to '削除', staff, method: :delete, data: { confirm: '削除すると復元できません。よろしいですか？' } %></td>
+      </tr>
+    <% end %>
+    <% @staffs2.each do |staff| %>
+      <tr>
+        <td><%= staff.id %></td>
+        <td><%= staff.name %></td>
+        <td><%= staff.sex_text %></td>
+        <td><%= staff.age %></td>
+        <td><%= staff.phone_num %></td>
+        <td><%= staff.mail %></td>
+        <td><%= staff.role_text %></td>
+        <td><%= staff.status_text %></td>
+        <td><%= link_to '詳細', staff %></td>
+        <td></td>
+        <td><%= link_to '削除', staff, method: :delete, data: { confirm: '削除すると復元できません。よろしいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規登録', new_staff_path %>

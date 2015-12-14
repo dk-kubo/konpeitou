@@ -1,0 +1,19 @@
+class CreateCaremanagers < ActiveRecord::Migration
+  def change
+    create_table :caremanagers do |t|
+      t.string :name
+      t.string :name_kana
+      t.string :sex
+      t.date :birth
+      t.integer :age
+      t.string :postal_code
+      t.text :address
+      t.string :phone_num
+      t.string :mail
+      t.string :company
+      t.integer :status
+
+      t.timestamps null: false
+    end
+  end
+end

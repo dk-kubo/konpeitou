@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>こんぺいとう利用者管理システム</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header class="navbar">
+	<div class="container">
+		<li id="logo"><%=link_to "こんぺいとう利用者管理システム",root_path %></div>
+		<ul class="header-right">
+			<%= link_to root_path do %>
+				<i class="fi-home" style="color: white; margin: 40px;font-size:30px;"></i>
+			<% end %>
+		</ul>
+	</div>
+
+</header>
+<div class="sidebar">
+	<ul>
+		<li><i class="fi-torso"></i> <%= link_to "スタッフ管理",s_top_path%></li>
+		<li><i class="fi-torso-business"></i> <%= link_to "ケアマネ管理",care_top_path%></li>
+        <li><i class="fi-blind"> </i>利用者管理</li>
+        <li><i class="fi-list-thumbnails"> </i>介護記録管理</li>
+        <li>連絡帳管理</li>
+	</ul>
+</div>
+<!--ここに本文-->
+<div class="container">
+	<%= yield %>
+</div>
+<!--ここまで本文-->
+
+
+</body>
+<footer class="footer">
+	<div class="small">
+		&copy; 2015 conpeitou, Inc.
+	</div>
+	<div class="access">
+		<p>042-783-0761</p>
+		<p>神奈川県相模原市緑区</p>
+	</div>
+</footer>
+</html>

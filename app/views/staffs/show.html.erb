@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前:</strong>
+  <%= @staff.name %>
+</p>
+
+<p>
+  <strong>カナ:</strong>
+  <%= @staff.name_kana %>
+</p>
+
+<p>
+  <strong>性別:</strong>
+  <%= @staff.sex_text %>
+</p>
+
+<p>
+  <strong>誕生日:</strong>
+  <%= @staff.birth %>
+</p>
+
+<p>
+  <strong>年齢:</strong>
+  <%= @staff.age %>
+</p>
+
+<p>
+  <strong>郵便番号:</strong>
+  <%= @staff.postal_code %>
+</p>
+
+<p>
+  <strong>住所:</strong>
+  <%= @staff.address %>
+</p>
+
+<p>
+  <strong>携帯番号:</strong>
+  <%= @staff.phone_num %>
+</p>
+
+<p>
+  <strong>自宅番号:</strong>
+  <%= @staff.home_num %>
+</p>
+
+<p>
+  <strong>メールアドレス:</strong>
+  <%= @staff.mail %>
+</p>
+
+<p>
+  <strong>役職:</strong>
+  <%= @staff.role_text %>
+</p>
+
+<p>
+  <strong>在職ステータス:</strong>
+  <%= @staff.status_text %>
+</p>
+
+
+<%= link_to '編集', edit_staff_path(@staff) %> |
+<%= link_to '一覧へ', staffs_path %>

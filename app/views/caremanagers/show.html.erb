@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前:</strong>
+  <%= @caremanager.name %>
+</p>
+
+<p>
+  <strong>カナ:</strong>
+  <%= @caremanager.name_kana %>
+</p>
+
+<p>
+  <strong>性別:</strong>
+  <%= @caremanager.sex_text %>
+</p>
+
+<p>
+  <strong>生年月日:</strong>
+  <%= @caremanager.birth %>
+</p>
+
+<p>
+  <strong>年齢:</strong>
+  <%= @caremanager.age %>
+</p>
+
+<p>
+  <strong>郵便番号:</strong>
+  <%= @caremanager.postal_code %>
+</p>
+
+<p>
+  <strong>住所:</strong>
+  <%= @caremanager.address %>
+</p>
+
+<p>
+  <strong>電話番号:</strong>
+  <%= @caremanager.phone_num %>
+</p>
+
+<p>
+  <strong>メールアドレス:</strong>
+  <%= @caremanager.mail %>
+</p>
+
+<p>
+  <strong>所属社名:</strong>
+  <%= @caremanager.company %>
+</p>
+
+<p>
+  <strong>在籍ステータス:</strong>
+  <%= @caremanager.status_text %>
+</p>
+
+<%= link_to '編集', edit_caremanager_path(@caremanager) %> |
+<%= link_to '一覧へ', caremanagers_path %>

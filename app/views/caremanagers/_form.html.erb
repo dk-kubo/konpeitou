@@ -1,0 +1,65 @@
+<%= form_for(@caremanager) do |f| %>
+  <% if @caremanager.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@caremanager.errors.count, "error") %> prohibited this caremanager from being saved:</h2>
+
+      <ul>
+      <% @caremanager.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :名前 %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :カナ %><br>
+    <%= f.text_field :name_kana %>
+  </div>
+  <div class="field">
+    <%= f.label :性別 %><br>
+    <%= f.select :sex, Staff.sex.options %>
+  </div>
+  <div class="field">
+    <%= f.label :生年月日 %><br>
+    <%= f.date_select(
+          :birth,
+          start_year: 1920,
+          end_year:   (Time.now.year),
+          default:    Date.new(1989, 1, 1)) %>
+  </div>
+  <div class="field">
+    <%= f.label :年齢 %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :郵便番号 %><br>
+    <%= f.text_field :postal_code %>
+  </div>
+  <div class="field">
+    <%= f.label :住所 %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :電話番号 %><br>
+    <%= f.text_field :phone_num %>
+  </div>
+  <div class="field">
+    <%= f.label :メールアドレス %><br>
+    <%= f.text_field :mail %>
+  </div>
+  <div class="field">
+    <%= f.label :所属社名 %><br>
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :在職ステータス %><br>
+    <%= f.select :status, Staff.status.options %>
+  </div>
+  <div class="actions">
+    <%= f.submit '登録', :confirm => '登録してもよろしいですか？', :disable_with =>'登録中...' %>
+  </div>
+<% end %>
