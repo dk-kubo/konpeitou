@@ -9,7 +9,8 @@ class CaremanagersController < ApplicationController
 
 
   def index
-    @caremanagers = Caremanager.all
+    @caremanagers = Caremanager.where(status:1)
+    @caremanagers2 = Caremanager.where(status:2)
   end
 
   # GET /caremanagers/1

@@ -34,6 +34,21 @@
         <td><%= link_to '削除', caremanager, method: :delete, data: { confirm: '削除すると復元できません。よろしいですか？' } %></td>
       </tr>
     <% end %>
+    <% @caremanagers2.each do |caremanager| %>
+      <tr>
+        <td><%= caremanager.id %></td>
+        <td><%= caremanager.name %></td>
+        <td><%= caremanager.sex_text %></td>
+        <td><%= caremanager.age %></td>
+        <td><%= caremanager.phone_num %></td>
+        <td><%= caremanager.mail %></td>
+        <td><%= caremanager.company %></td>
+        <td><%= caremanager.status_text %></td>
+        <td><%= link_to '詳細', caremanager %></td>
+        <td><%= link_to '編集', edit_caremanager_path(caremanager) %></td>
+        <td><%= link_to '削除', caremanager, method: :delete, data: { confirm: '削除すると復元できません。よろしいですか？' } %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20151213065221) do
     t.string   "sex"
     t.date     "birth"
     t.integer  "age"
-    t.binary   "photo"
     t.string   "postal_code"
     t.text     "address"
     t.string   "phone_num"
