@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>こんぺいとう利用者管理システム</title>
+  <title>こんぺいとう基幹システム</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,26 +9,62 @@
 <body>
 <header class="navbar">
 	<div class="container">
-		<li id="logo"><%=link_to "こんぺいとう利用者管理システム",root_path %></div>
+		<div id="logo"><%=link_to "こんぺいとう基幹システム",root_path %></div>
+	</div>
+	<div>
 		<ul class="header-right">
 			<%= link_to root_path do %>
-				<i class="fi-home" style="color: white; margin: 40px;font-size:30px;"></i>
+			<i class="fi-home" style="color: white; margin: 40px;font-size:30px;"></i>
 			<% end %>
 		</ul>
 	</div>
-
 </header>
-<div class="sidebar">
+<div class="sidebar" id="accordion">
 	<ul>
-		<li><i class="fi-torso"></i> <%= link_to "スタッフ管理",s_top_path%></li>
-		<li><i class="fi-torso-business"></i> <%= link_to "ケアマネ管理",care_top_path%></li>
-        <li><i class="fi-blind"> </i>利用者管理</li>
-        <li><i class="fi-list-thumbnails"> </i>介護記録管理</li>
-        <li>連絡帳管理</li>
+		<li>
+			<div>
+				<label>
+					<input type="radio" name="btn"/>
+					<div>
+						<i class="fi-torso"></i> <%= link_to "スタッフ管理",s_top_path%>
+					</div>
+				</label>
+				<ul class="aaa">
+					<li><a href="#">サブカテゴリー１</a></li>
+					<li><a href="#">サブカテゴリー２</a></li>
+	        	</ul>
+        	</div>
+    	</li>
+    	<li>
+    		<div>
+				<input type="radio" name="btn" />
+				<div>
+					<i class="fi-torso-business"></i> <%= link_to "ケアマネ管理",care_top_path%>
+				</div>
+			</div>
+		</li>
+    	<li>
+    		<div>
+    			<label>
+					<input type="radio" name="btn"/>
+					<div>
+						<i class="fi-blind"> </i>利用者管理
+					</div>
+				</label>
+			</div>
+		</li>
+    	<li>
+    		<div>
+				<input type="radio" name="btn" />
+				<div>
+					<i class="fi-list-thumbnails"> </i>介護記録管理</li>
+				</div>
+			</div>
+		</li>
 	</ul>
 </div>
 <!--ここに本文-->
-<div class="container">
+<div class="main">
 	<%= yield %>
 </div>
 <!--ここまで本文-->
