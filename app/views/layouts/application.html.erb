@@ -20,46 +20,31 @@
 	</div>
 </header>
 <div class="sidebar" id="accordion">
-	<ul>
-		<li>
-			<div>
-				<label>
-					<input type="radio" name="btn"/>
-					<div>
-						<i class="fi-torso"></i> <%= link_to "スタッフ管理",s_top_path%>
-					</div>
-				</label>
-				<ul class="aaa">
-					<li><a href="#">サブカテゴリー１</a></li>
-					<li><a href="#">サブカテゴリー２</a></li>
-	        	</ul>
-        	</div>
-    	</li>
-    	<li>
-    		<div>
-				<input type="radio" name="btn" />
-				<div>
-					<i class="fi-torso-business"></i> <%= link_to "ケアマネ管理",care_top_path%>
-				</div>
-			</div>
+	<ul id="dropmenu">
+		<li><%= link_to "スタッフ管理",s_top_path%>
+				<ul>
+					<li><%= link_to "新規登録",new_staff_path%></li>
+					<li><%= link_to "一覧表示",staffs_path%></li>
+		        </ul>
 		</li>
-    	<li>
-    		<div>
-    			<label>
-					<input type="radio" name="btn"/>
-					<div>
-						<i class="fi-blind"> </i>利用者管理
-					</div>
-				</label>
-			</div>
+    	<li><%= link_to "ケアマネ管理",care_top_path%>
+    		<ul>
+				<li><%= link_to "新規登録",new_caremanager_path%></li>
+				<li><%= link_to "一覧表示",caremanagers_path%></li>
+			</ul>
 		</li>
-    	<li>
-    		<div>
-				<input type="radio" name="btn" />
-				<div>
-					<i class="fi-list-thumbnails"> </i>介護記録管理</li>
-				</div>
-			</div>
+    	<li><%= link_to "利用者管理",care_top_path%>
+    		<ul>
+				<li><%= link_to "新規登録",new_caremanager_path%></li>
+				<li><%= link_to "一覧表示",caremanagers_path%></li>
+			</ul>
+		</li>
+    	<li><%= link_to "介護記録管理",care_top_path%>
+    		<ul>
+				<li><%= link_to "新規作成",new_caremanager_path%></li>
+				<li><%= link_to "一覧表示",caremanagers_path%></li>
+				<li><%= link_to "連絡帳印刷",caremanagers_path%></li>
+			</ul>
 		</li>
 	</ul>
 </div>
