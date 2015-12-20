@@ -42,8 +42,14 @@
     	<li><%= link_to "介護記録管理",care_top_path%>
     		<ul>
 				<li><%= link_to "新規作成",new_caremanager_path%></li>
-				<li><%= link_to "一覧表示",caremanagers_path%></li>
-				<li><%= link_to "連絡帳印刷",caremanagers_path%></li>
+				<li><%= link_to "検索",caremanagers_path%></li>
+			</ul>
+		</li>
+		<li><%= link_to "連絡帳管理",s_top_path%>
+			<ul>
+				<li><%= link_to "新規登録",new_staff_path%></li>
+				<li><%= link_to "一覧表示",staffs_path%></li>
+				<li><%= link_to "印刷",staffs_path%></li>
 			</ul>
 		</li>
 	</ul>
