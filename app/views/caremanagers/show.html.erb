@@ -1,59 +1,53 @@
 <p id="notice"><%= notice %></p>
+<center>
+  <h1>ケアマネージャー詳細</h1>
+</center>
 
-<p>
-  <strong>名前:</strong>
-  <%= @caremanager.name %>
-</p>
-
-<p>
-  <strong>カナ:</strong>
-  <%= @caremanager.name_kana %>
-</p>
-
-<p>
-  <strong>性別:</strong>
-  <%= @caremanager.sex_text %>
-</p>
-
-<p>
-  <strong>生年月日:</strong>
-  <%= @caremanager.birth %>
-</p>
-
-<p>
-  <strong>年齢:</strong>
-  <%= @caremanager.age %>
-</p>
-
-<p>
-  <strong>郵便番号:</strong>
-  <%= @caremanager.postal_code %>
-</p>
-
-<p>
-  <strong>住所:</strong>
-  <%= @caremanager.address %>
-</p>
-
-<p>
-  <strong>電話番号:</strong>
-  <%= @caremanager.phone_num %>
-</p>
-
-<p>
-  <strong>メールアドレス:</strong>
-  <%= @caremanager.mail %>
-</p>
-
-<p>
-  <strong>所属社名:</strong>
-  <%= @caremanager.company %>
-</p>
-
-<p>
-  <strong>在籍ステータス:</strong>
-  <%= @caremanager.status_text %>
-</p>
-
+<table class="detail_table">
+  <tr>
+    <td class="title" style="text-align:center;"><strong>名前</strong></td>
+    <th class="input"><%= @caremanager.name %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>カナ</strong></td>
+    <th class="input"><%= @caremanager.name_kana %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>性別</strong></td>
+    <th class="input"><%= @caremanager.sex_text %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>生年月日</strong></td>
+    <th class="input"><%= @caremanager.birth %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>年齢</strong></td>
+    <th class="input"><%= @caremanager.age %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>郵便番号</strong></td>
+    <th class="input"><%= @caremanager.postal_code %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>住所</strong></td>
+    <th class="input"><%= @caremanager.address %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>電話番号</strong></td>
+    <th class="input"><%= @caremanager.phone_num %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>メールアドレス</strong></td>
+    <th class="input"><%= @caremanager.mail %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>所属社名</strong></td>
+    <th class="input"><%= @caremanager.company %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>在籍ステータス</strong></td>
+    <th class="input"><%= @caremanager.status_text %></th>
+  </tr>
+</table>
 <%= link_to '編集', edit_caremanager_path(@caremanager) %> |
 <%= link_to '一覧へ', caremanagers_path %>

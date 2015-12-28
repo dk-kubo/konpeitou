@@ -5,13 +5,12 @@
 
 <table>
   <thead>
-    <tr>
+    <tr class="title">
       <th>ケアマネ番号</th>
       <th>名前</th>
       <th>性別</th>
       <th>年齢</th>
       <th>電話番号</th>
-      <th>メールアドレス</th>
       <th>所属社名</th>
       <th>在職ステータス</th>
       <th colspan="3"></th>
@@ -26,12 +25,11 @@
         <td><%= caremanager.sex_text %></td>
         <td><%= caremanager.age %></td>
         <td><%= caremanager.phone_num %></td>
-        <td><%= caremanager.mail %></td>
         <td><%= caremanager.company %></td>
         <td><%= caremanager.status_text %></td>
         <td><%= link_to '詳細', caremanager %></td>
         <td><%= link_to '編集', edit_caremanager_path(caremanager) %></td>
-        <td><%= link_to '削除', caremanager, method: :delete, data: { confirm: '削除すると復元できません。よろしいですか？' } %></td>
+        <td><%= link_to '削除', caremanager, method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在職ステータス」を変更してください。それでもよろしいですか？' } %></td>
       </tr>
     <% end %>
     <% @caremanagers2.each do |caremanager| %>
@@ -41,12 +39,11 @@
         <td><%= caremanager.sex_text %></td>
         <td><%= caremanager.age %></td>
         <td><%= caremanager.phone_num %></td>
-        <td><%= caremanager.mail %></td>
         <td><%= caremanager.company %></td>
         <td><%= caremanager.status_text %></td>
         <td><%= link_to '詳細', caremanager %></td>
         <td><%= link_to '編集', edit_caremanager_path(caremanager) %></td>
-        <td><%= link_to '削除', caremanager, method: :delete, data: { confirm: '削除すると復元できません。よろしいですか？' } %></td>
+        <td><%= link_to '削除', caremanager, method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在職ステータス」を変更してください。それでもよろしいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>

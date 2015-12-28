@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :cus_families
   resources :caremanagers
   match '/care_top', to: 'caremanagers#care_top', via: 'get'
 

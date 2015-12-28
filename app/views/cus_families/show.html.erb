@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cus_family.name %>
+</p>
+
+<p>
+  <strong>Name kana:</strong>
+  <%= @cus_family.name_kana %>
+</p>
+
+<p>
+  <strong>Relation:</strong>
+  <%= @cus_family.relation %>
+</p>
+
+<p>
+  <strong>Living:</strong>
+  <%= @cus_family.living %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @cus_family.address %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @cus_family.contact %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @cus_family.customer %>
+</p>
+
+<%= link_to 'Edit', edit_cus_family_path(@cus_family) %> |
+<%= link_to 'Back', cus_families_path %>

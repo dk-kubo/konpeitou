@@ -33,3 +33,7 @@ en:
       role:
         manager: "管理者"
         helper: "一般"
+
+      living:
+        together: "同居"
+        separate: "別居"
