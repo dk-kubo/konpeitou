@@ -1,4 +1,7 @@
 class Caremanager < ActiveRecord::Base
+
+	has_many :customers, dependent: :destroy
+
 	extend Enumerize
 
 	enumerize :sex, :in => [:male, :female], scope: true

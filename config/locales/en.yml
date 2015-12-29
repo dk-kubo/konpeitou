@@ -29,6 +29,8 @@ en:
       status:
         active: "在職"
         blocked: "退職"
+        enroll: "在籍"
+        withdraw: "退会"
 
       role:
         manager: "管理者"
@@ -37,3 +39,8 @@ en:
       living:
         together: "同居"
         separate: "別居"
+
+      household:
+        alone: "独身"
+        elderly_only: "高齢者のみ"
+        other: "その他"

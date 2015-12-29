@@ -2,18 +2,14 @@
 
 one:
   name: MyString
-  name_kana: MyString
   relation: MyString
   living: MyString
   address: MyText
   contact: MyString
-  customer_id: 
 
 two:
   name: MyString
-  name_kana: MyString
   relation: MyString
   living: MyString
   address: MyText
   contact: MyString
-  customer_id: 

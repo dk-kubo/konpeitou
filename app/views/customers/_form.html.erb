@@ -1,0 +1,131 @@
+<%= form_for(@customer) do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table class="form">
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :受付日 %></td>
+      <th class="input">
+        <%= f.date_select(
+          :reception_day,
+          start_year: 2010,
+          end_year:   (Time.now.year),
+          default:    Date.new(Time.now.year)) %>
+      </th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :被保険者番号 %></td>
+    <th class="input"><%= f.number_field :insure_num %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :名前 %></td>
+    <th class="input"><%= f.text_field :name %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :カナ %></td>
+    <th class="input"><%= f.text_field :name_kana %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :性別 %></td>
+      <th class="input">
+        <%= f.radio_button(:sex, "male") %>
+        <%= f.label :sex, '男性', :value => "male" %>
+        <%= f.radio_button(:sex, "female") %>
+        <%= f.label :sex, '女性', :value => "female" %>
+      </th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :生年月日 %></td>
+      <th class="input">
+        <%= f.date_select(
+          :birth,
+          start_year: 1920,
+          end_year:   (Time.now.year),
+          default:    Date.new(1989, 1, 1)) %>
+      </th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :郵便番号 %></td>
+    <th class="input"><%= f.text_field :postal_code %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :住所 %></td>
+    <th class="input"><%= f.text_area :address %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :Tel %></td>
+    <th class="input"><%= f.text_field :home_num %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :携帯 %></td>
+    <th class="input"><%= f.text_field :phone_num %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :FAX %></td>
+    <th class="input"><%= f.text_field :fax %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :メール %></td>
+    <th class="input"><%= f.text_field :mail %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :相談の経緯 %></td>
+    <th class="input"><%= f.text_area :history_of_consul %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :主訴・要望 %></td>
+    <th class="input"><%= f.text_area :demand %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :世帯 %></td>
+      <th class="input">
+        <%= f.radio_button(:household, "alone") %>
+        <%= f.label :household, '独身', :value => "alone" %>
+        <%= f.radio_button(:household, "elderly_only") %>
+        <%= f.label :household, '高齢者のみ', :value => "elderly_only" %>
+        <%= f.radio_button(:household, "other") %>
+        <%= f.label :household, 'その他', :value => "other" %>
+      </th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :家族状況 %></td>
+    <th class="input"><%= f.text_area :family_situation %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><%= f.label :在職ステータス %></td>
+    <th class="input"><%= f.select :status, Customer.status.options %></th>
+  </tr>
+</table>
+<table>
+    <tr>
+    <%= f.label :cus_families, "家族情報" %><br />
+    <%= f.fields_for :cus_families do |cus_families_form| %>
+      <%= cus_families_form.label :name, "名前" %>
+      <%= cus_families_form.text_field :name %><br />
+      <%= cus_families_form.label :relation, "続柄" %>
+      <%= cus_families_form.text_field :relation %><br />
+      <%= cus_families_form.label :address, "住所" %>
+      <%= cus_families_form.text_field :address %><br />
+      <%= cus_families_form.label :contact, "連絡先" %>
+      <%= cus_families_form.text_field :contact %><br />
+    <% end %>
+  </tr>
+</table>
+
+
+
+<div class="actions">
+  <%= f.submit '登録', :confirm => '登録してもよろしいですか？', :disable_with =>'登録中...' %>
+</div>
+
+<% end %>

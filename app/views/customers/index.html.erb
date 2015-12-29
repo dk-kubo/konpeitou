@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<center>
+  <h1>利用者一覧</h1>
+</center>
+
+<table>
+  <thead>
+    <tr class="title">
+      <th>受付日</th>
+      <th>被保険者番号</th>
+      <th>名前</th>
+      <th>性別</th>
+      <th>生年月日</th>
+      <th>自宅番号</th>
+      <th>メール</th>
+      <th>在籍ステータス</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.reception_day %></td>
+        <td><%= customer.insure_num %></td>
+        <td><%= customer.name %></td>
+        <td><%= customer.sex_text %></td>
+        <td><%= customer.birth %></td>
+        <td><%= customer.home_num %></td>
+        <td><%= customer.mail %></td>
+        <td><%= customer.status_text %></td>
+        <td><%= link_to '詳細', customer %></td>
+        <td><%= link_to '編集', edit_customer_path(customer) %></td>
+        <td><%= link_to '削除', customer, method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在職ステータス」を変更してください。それでもよろしいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規登録', new_customer_path %>

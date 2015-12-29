@@ -1,0 +1,87 @@
+<p id="notice"><%= notice %></p>
+<center>
+  <h1>利用者情報</h1>
+</center>
+
+<table class="detail_table">
+  <tr>
+    <td class="title" style="text-align:center;"><strong>受付日</strong></td>
+    <th class="input"><%= @customer.reception_day %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>被保険者番号</strong></td>
+    <th class="input"><%= @customer.insure_num %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>名前</strong></td>
+    <th class="input"><%= @customer.name %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>カナ</strong></td>
+    <th class="input"><%= @customer.name_kana %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>性別</strong></td>
+    <th class="input"><%= @customer.sex_text %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>生年月日</strong></td>
+    <th class="input"><%= @customer.birth %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>郵便番号</strong></td>
+    <th class="input"><%= @customer.postal_code %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>住所</strong></td>
+    <th class="input"><%= @customer.address %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>自宅番号</strong></td>
+    <th class="input"><%= @customer.home_num %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>携帯番号</strong></td>
+    <th class="input"><%= @customer.phone_num %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>FAX</strong></td>
+    <th class="input"><%= @customer.fax %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>メールアドレス</strong></td>
+    <th class="input"><%= @customer.mail %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>相談の経緯</strong></td>
+    <th class="input"><%= @customer.history_of_consul %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>主訴・要望</strong></td>
+    <th class="input"><%= @customer.demand %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>世帯</strong></td>
+    <th class="input"><%= @customer.household_text %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>家族状況</strong></td>
+    <th class="input"><%= @customer.family_situation %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>作成日</strong></td>
+    <th class="input"><%= @customer.created_at.strftime("%Y年%m月%d日 %H時%M分") %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>更新日</strong></td>
+    <th class="input"><%= @customer.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></th>
+  </tr>
+  <tr>
+    <td class="title" style="text-align:center;"><strong>在籍ステータス</strong></td>
+    <th class="input"><%= @customer.status_text %></th>
+  </tr>
+
+</table>
+
+<%= link_to '編集', edit_customer_path(@customer) %> |
+<%= link_to '戻る', customers_path %>

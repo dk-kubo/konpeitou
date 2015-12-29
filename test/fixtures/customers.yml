@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  insure_num: 1
+  name: MyString
+  name_kana: MyString
+  sex: MyString
+  birth: 2015-12-29
+  postal_code: MyString
+  address: MyText
+  home_num: MyString
+  phone_num: MyString
+  fax: MyString
+  mail: MyString
+  reception_day: 2015-12-29
+  history_of_consul: MyText
+  demand: MyText
+  household: MyString
+  family_situation: MyText
+  caremanager: 
+  staff_id: 
+
+two:
+  insure_num: 1
+  name: MyString
+  name_kana: MyString
+  sex: MyString
+  birth: 2015-12-29
+  postal_code: MyString
+  address: MyText
+  home_num: MyString
+  phone_num: MyString
+  fax: MyString
+  mail: MyString
+  reception_day: 2015-12-29
+  history_of_consul: MyText
+  demand: MyText
+  household: MyString
+  family_situation: MyText
+  caremanager: 
+  staff_id: 

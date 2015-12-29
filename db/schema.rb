@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228131159) do
+ActiveRecord::Schema.define(version: 20151229132746) do
 
   create_table "caremanagers", force: :cascade do |t|
     t.string   "name"
@@ -31,17 +31,36 @@ ActiveRecord::Schema.define(version: 20151228131159) do
 
   create_table "cus_families", force: :cascade do |t|
     t.string   "name"
-    t.string   "name_kana"
     t.string   "relation"
     t.string   "living"
     t.text     "address"
     t.string   "contact"
-    t.integer  "customer_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "customer_id"
   end
 
-  add_index "cus_families", ["customer_id"], name: "index_cus_families_on_customer_id"
+  create_table "customers", force: :cascade do |t|
+    t.integer  "insure_num"
+    t.string   "name"
+    t.string   "name_kana"
+    t.string   "sex"
+    t.date     "birth"
+    t.string   "postal_code"
+    t.text     "address"
+    t.string   "home_num"
+    t.string   "phone_num"
+    t.string   "fax"
+    t.string   "mail"
+    t.date     "reception_day"
+    t.text     "history_of_consul"
+    t.text     "demand"
+    t.string   "household"
+    t.text     "family_situation"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "status"
+  end
 
   create_table "staffs", force: :cascade do |t|
     t.string   "name"
