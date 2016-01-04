@@ -1,0 +1,12 @@
+<fieldset>
+	<%= f.label :name, "名前" %>
+	<%= f.text_field :name %><br />
+	<%= f.label :relation, "続柄" %>
+	<%= f.text_field :relation %><br />
+	<%= f.label :address, "住所" %>
+	<%= f.text_field :address %><br />
+	<%= f.label :contact, "連絡先" %>
+	<%= f.text_field :contact %><br />
+	<%= f.hidden_field :_destroy %>
+	<%= link_to "削除", '#', class: "remove_fields" %>
+</fieldset>

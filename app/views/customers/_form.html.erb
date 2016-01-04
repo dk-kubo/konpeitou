@@ -79,6 +79,15 @@
     <th class="input"><%= f.text_field :mail %></th>
   </tr>
   <tr>
+    <td class="title" style="text-align:center;"><%= f.label :家族情報 %></td>
+      <th class="input">
+        <%= f.fields_for :cus_families do |builder| %>
+        <%= render "cus_family_fields", f: builder %>
+        <% end %>
+        <%= link_to_add_fields "家族追加", f, :cus_families %>
+      </th>
+  </tr> 
+  <tr>
     <td class="title" style="text-align:center;"><%= f.label :相談の経緯 %></td>
     <th class="input"><%= f.text_area :history_of_consul %></th>
   </tr>
@@ -106,23 +115,6 @@
     <th class="input"><%= f.select :status, Customer.status.options %></th>
   </tr>
 </table>
-<table>
-    <tr>
-    <%= f.label :cus_families, "家族情報" %><br />
-    <%= f.fields_for :cus_families do |cus_families_form| %>
-      <%= cus_families_form.label :name, "名前" %>
-      <%= cus_families_form.text_field :name %><br />
-      <%= cus_families_form.label :relation, "続柄" %>
-      <%= cus_families_form.text_field :relation %><br />
-      <%= cus_families_form.label :address, "住所" %>
-      <%= cus_families_form.text_field :address %><br />
-      <%= cus_families_form.label :contact, "連絡先" %>
-      <%= cus_families_form.text_field :contact %><br />
-    <% end %>
-  </tr>
-</table>
-
-
 
 <div class="actions">
   <%= f.submit '登録', :confirm => '登録してもよろしいですか？', :disable_with =>'登録中...' %>

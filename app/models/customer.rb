@@ -3,7 +3,7 @@ class Customer < ActiveRecord::Base
   has_many :cus_families, dependent: :destroy
   belongs_to :caremanager
 
-  accepts_nested_attributes_for :cus_families
+  accepts_nested_attributes_for :cus_families, allow_destroy: true
 
   	extend Enumerize
 	enumerize :sex, :in => [:male, :female], scope: true

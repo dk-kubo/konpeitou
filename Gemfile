@@ -56,6 +56,7 @@ group :development, :test do
 
   gem 'foundation-icons-sass-rails'
 
+  gem 'jquery-turbolinks'
 
   gem 'enumerize'
   

@@ -29,7 +29,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
+        format.html { redirect_to @customer, notice: '正常に登録されました。' }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
+        format.html { redirect_to @customer, notice: '正常に更新されました。' }
         format.json { render :show, status: :ok, location: @customer }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class CustomersController < ApplicationController
   def destroy
     @customer.destroy
     respond_to do |format|
-      format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }
+      format.html { redirect_to customers_url, notice: '正常に削除されました。' }
       format.json { head :no_content }
     end
   end
@@ -71,7 +71,11 @@ class CustomersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
       params.require(:customer).permit(:insure_num, :name, :name_kana, :sex, :birth, :postal_code, :address, :home_num, :phone_num, :fax, :mail, :reception_day, :history_of_consul, :demand, :household, :family_situation, :caremanager, :staff_id,
-        cus_families_attributes: [:name, :relation, :living, :address, :contact])
+        cus_families_attributes: [:name, :relation, :living, :address, :contact, :_destroy])
     end
 
+    def  update_customer_params
+      params.require(:customer).permit(:insure_num, :name, :name_kana, :sex, :birth, :postal_code, :address, :home_num, :phone_num, :fax, :mail, :reception_day, :history_of_consul, :demand, :household, :family_situation, :caremanager, :staff_id,
+        cus_families_attributes: [:name, :relation, :living, :address, :contact, :_destroy, :id])
+    end
 end
