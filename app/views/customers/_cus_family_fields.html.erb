@@ -3,6 +3,13 @@
 	<%= f.text_field :name %><br />
 	<%= f.label :relation, "続柄" %>
 	<%= f.text_field :relation %><br />
+
+	<%= f.label :living, "同居・別居" %><br />
+    <%= f.radio_button(:living, "together") %>
+    <%= f.label :living, '同居', :value => "together" %>
+    <%= f.radio_button(:living, "separate") %>
+    <%= f.label :living, '別居', :value => "separate" %><br />
+
 	<%= f.label :address, "住所" %>
 	<%= f.text_field :address %><br />
 	<%= f.label :contact, "連絡先" %>

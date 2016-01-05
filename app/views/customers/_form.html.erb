@@ -12,10 +12,10 @@
   <% end %>
 
 
-<table class="form">
+<table class="form_cus">
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :受付日 %></td>
-      <th class="input">
+    <td class="title_cus" style="text-align:center;"><%= f.label :受付日 %></td>
+      <th class="input_cus">
         <%= f.date_select(
           :reception_day,
           start_year: 2010,
@@ -24,20 +24,20 @@
       </th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :被保険者番号 %></td>
-    <th class="input"><%= f.number_field :insure_num %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :被保険者番号 %></td>
+    <th class="input_cus"><%= f.number_field :insure_num %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :名前 %></td>
-    <th class="input"><%= f.text_field :name %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :名前 %></td>
+    <th class="input_cus"><%= f.text_field :name %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :カナ %></td>
-    <th class="input"><%= f.text_field :name_kana %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :カナ %></td>
+    <th class="input_cus"><%= f.text_field :name_kana %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :性別 %></td>
-      <th class="input">
+    <td class="title_cus" style="text-align:center;"><%= f.label :性別 %></td>
+      <th class="input_cus">
         <%= f.radio_button(:sex, "male") %>
         <%= f.label :sex, '男性', :value => "male" %>
         <%= f.radio_button(:sex, "female") %>
@@ -45,8 +45,8 @@
       </th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :生年月日 %></td>
-      <th class="input">
+    <td class="title_cus" style="text-align:center;"><%= f.label :生年月日 %></td>
+      <th class="input_cus">
         <%= f.date_select(
           :birth,
           start_year: 1920,
@@ -55,32 +55,32 @@
       </th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :郵便番号 %></td>
-    <th class="input"><%= f.text_field :postal_code %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :郵便番号 %></td>
+    <th class="input_cus"><%= f.text_field :postal_code %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :住所 %></td>
-    <th class="input"><%= f.text_area :address %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :住所 %></td>
+    <th class="input_cus"><%= f.text_area :address %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :Tel %></td>
-    <th class="input"><%= f.text_field :home_num %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :Tel %></td>
+    <th class="input_cus"><%= f.text_field :home_num %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :携帯 %></td>
-    <th class="input"><%= f.text_field :phone_num %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :携帯 %></td>
+    <th class="input_cus"><%= f.text_field :phone_num %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :FAX %></td>
-    <th class="input"><%= f.text_field :fax %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :FAX %></td>
+    <th class="input_cus"><%= f.text_field :fax %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :メール %></td>
-    <th class="input"><%= f.text_field :mail %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :メール %></td>
+    <th class="input_cus"><%= f.text_field :mail %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :家族情報 %></td>
-      <th class="input">
+    <td class="title_cus" style="text-align:center;"><%= f.label :家族情報 %></td>
+      <th class="input_cus">
         <%= f.fields_for :cus_families do |builder| %>
         <%= render "cus_family_fields", f: builder %>
         <% end %>
@@ -88,16 +88,16 @@
       </th>
   </tr> 
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :相談の経緯 %></td>
-    <th class="input"><%= f.text_area :history_of_consul %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :相談の経緯 %></td>
+    <th class="input_cus"><%= f.text_area :history_of_consul %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :主訴・要望 %></td>
-    <th class="input"><%= f.text_area :demand %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :主訴・要望 %></td>
+    <th class="input_cus"><%= f.text_area :demand %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :世帯 %></td>
-      <th class="input">
+    <td class="title_cus" style="text-align:center;"><%= f.label :世帯 %></td>
+      <th class="input_cus">
         <%= f.radio_button(:household, "alone") %>
         <%= f.label :household, '独身', :value => "alone" %>
         <%= f.radio_button(:household, "elderly_only") %>
@@ -107,12 +107,12 @@
       </th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :家族状況 %></td>
-    <th class="input"><%= f.text_area :family_situation %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :家族状況 %></td>
+    <th class="input_cus"><%= f.text_area :family_situation %></th>
   </tr>
   <tr>
-    <td class="title" style="text-align:center;"><%= f.label :在職ステータス %></td>
-    <th class="input"><%= f.select :status, Customer.status.options %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :在職ステータス %></td>
+    <th class="input_cus"><%= f.select :status, Customer.status.options %></th>
   </tr>
 </table>
 

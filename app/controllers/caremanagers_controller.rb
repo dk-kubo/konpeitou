@@ -7,6 +7,9 @@ class CaremanagersController < ApplicationController
   def care_top
   end
 
+  def method_name
+    
+  end
 
   def index
     @caremanagers = Caremanager.where(status:1)

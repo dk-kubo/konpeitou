@@ -29,6 +29,10 @@ gem 'hirb-unicode'
 
 gem 'thinreports'
 
+gem 'jquery-turbolinks'
+
+gem 'enumerize','~> 0.7.0'
+
 gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -56,9 +60,7 @@ group :development, :test do
 
   gem 'foundation-icons-sass-rails'
 
-  gem 'jquery-turbolinks'
 
-  gem 'enumerize'
   
 end
 

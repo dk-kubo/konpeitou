@@ -11,18 +11,18 @@
     </div>
   <% end %>
 
-  <table class="form">
+  <table class="form_caremaneger">
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :名前 %></td>
-      <th class="input"><%= f.text_field :name %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :名前 %></td>
+      <th class="input_caremaneger"><%= f.text_field :name %></th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :カナ %></td>
-      <th class="input"><%= f.text_field :name_kana %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :カナ %></td>
+      <th class="input_caremaneger"><%= f.text_field :name_kana %></th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :性別 %></td>
-      <th class="input">
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :性別 %></td>
+      <th class="input_caremaneger">
         <%= f.radio_button(:sex, "male") %>
         <%= f.label :sex, '男性', :value => "male" %>
         <%= f.radio_button(:sex, "female") %>
@@ -30,8 +30,8 @@
       </th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :生年月日 %></td>
-      <th class="input">
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :生年月日 %></td>
+      <th class="input_caremaneger">
         <%= f.date_select(
           :birth,
           start_year: 1930,
@@ -40,32 +40,32 @@
       </th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :年齢 %></td>
-      <th class="input"><%= f.number_field :age %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :年齢 %></td>
+      <th class="input_caremaneger"><%= f.number_field :age %></th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :郵便番号 %></td>
-      <th class="input"><%= f.number_field :postal_code %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :郵便番号 %></td>
+      <th class="input_caremaneger"><%= f.number_field :postal_code %>　　　　　　※ -はつけないでください。</th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :住所 %></td>
-      <th class="input"><%= f.text_area :address %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :住所 %></td>
+      <th class="input_caremaneger"><%= f.text_area :address %></th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :携帯番号 %></td>
-      <th class="input"><%= f.text_field :phone_num %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :携帯番号 %></td>
+      <th class="input_caremaneger"><%= f.text_field :phone_num %></th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :メールアドレス %></td>
-      <th class="input"><%= f.text_field :mail %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :メールアドレス %></td>
+      <th class="input_caremaneger"><%= f.text_field :mail %></th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :所属社名 %></td>
-      <th class="input"><%= f.text_field :company %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :所属社名 %></td>
+      <th class="input_caremaneger"><%= f.text_field :company %></th>
     </tr>
     <tr>
-      <td class="title" style="text-align:center;"><%= f.label :在職ステータス %></td>
-      <th class="input"><%= f.select :status, Caremanager.status.options %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :在職ステータス %></td>
+      <th class="input_caremaneger"><%= f.select :status, Caremanager.status.options %></th>
     </tr>
 </table>
 
