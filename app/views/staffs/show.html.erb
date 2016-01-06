@@ -46,5 +46,18 @@
     <th class="input_staff"><%= @staff.status_text %></th>
   </tr>
 </table>
-<%= link_to '編集', edit_staff_path(@staff) %> |
-<%= link_to '一覧へ', staffs_path %>
+
+<input type="checkbox" class="check" id="checked">
+<label class="menu-btn" for="checked">
+        <span class="bar top"></span>
+        <span class="bar middle"></span>
+        <span class="bar bottom"></span>
+        <span class="menu-btn__text">MENU</span>
+</label>
+<label class="close-menu" for="checked"></label>
+<nav class="drawer-menu">
+        <ul>
+            <li><%= link_to '編集', edit_staff_path(@staff) %></li>
+            <li><%= link_to '一覧へ', staffs_path %></li>
+        </ul>
+</nav>

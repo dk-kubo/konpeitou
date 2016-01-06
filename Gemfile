@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
@@ -31,7 +30,9 @@ gem 'thinreports'
 
 gem 'jquery-turbolinks'
 
-gem 'enumerize','~> 0.7.0'
+gem 'enumerize'
+
+gem 'execjs'
 
 gem 'devise'
 # Use ActiveModel has_secure_password

@@ -17,6 +17,21 @@ module CustomersHelper
 		when 5
 			elem = '<th rowspan="6" class="title_cusfami" style="text-align:center;"><strong>家族情報</strong></th　rowspan="6">'
 			
+		when 6
+			elem = '<th rowspan="7" class="title_cusfami" style="text-align:center;"><strong>家族情報</strong></th　rowspan="7">'
+
+		when 7
+			elem = '<th rowspan="8" class="title_cusfami" style="text-align:center;"><strong>家族情報</strong></th　rowspan="8">'
+
+		when 8
+			elem = '<th rowspan="9" class="title_cusfami" style="text-align:center;"><strong>家族情報</strong></th　rowspan="9">'
+
+		when 9
+			elem = '<th rowspan="10" class="title_cusfami" style="text-align:center;"><strong>家族情報</strong></th　rowspan="10">'
+
+		when 10
+			elem = '<th rowspan="11" class="title_cusfami" style="text-align:center;"><strong>家族情報</strong></th　rowspan="11">'
+
 		else
 			elem =''
 

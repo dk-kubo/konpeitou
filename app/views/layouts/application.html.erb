@@ -14,47 +14,53 @@
 	<div>
 		<ul class="header-right">
 			<%= link_to root_path do %>
-			<i class="fi-home" style="color: white; margin: 50px;font-size:30px;"></i>
-			<i class="fi-home" style="color: white; margin: 50px;font-size:30px;"></i>
+			<li style="height: 65px;"><i class="fi-home" style="color: white; margin: 50px;font-size:30px;"></i></li>
+			<li style="height: 65px;"><i class="fi-home" style="color: white; margin: 50px;font-size:30px;"></i></li>
 			<% end %>
 		</ul>
 	</div>
 </header>
 <div class="sidebar" id="accordion">
 	<ul id="dropmenu">
-		<li><%= link_to "スタッフ管理",s_top_path%>
-				<ul>
-					<li><%= link_to "新規登録",new_staff_path%></li>
-					<li><%= link_to "一覧表示",staffs_path%></li>
-		        </ul>
-		</li>
-    	<li><%= link_to "ケアマネ管理",care_top_path%>
-    		<ul>
-				<li><%= link_to "新規登録",new_caremanager_path%></li>
-				<li><%= link_to "一覧表示",caremanagers_path%></li>
-			</ul>
-		</li>
-    	<li><%= link_to "利用者管理",care_top_path%>
-    		<ul>
-				<li><%= link_to "新規登録",new_customer_path%></li>
-				<li><%= link_to "一覧表示",customers_path%></li>
-			</ul>
-		</li>
-    	<li><%= link_to "介護記録管理",care_top_path%>
-    		<ul>
-				<li><%= link_to "新規作成",new_caremanager_path%></li>
-				<li><%= link_to "検索",caremanagers_path%></li>
-			</ul>
-		</li>
-		<li><%= link_to "連絡帳管理",s_top_path%>
-			<ul>
-				<li><%= link_to "新規登録",customers_path%></li>
-				<li><%= link_to "一覧表示",customers_path%></li>
-				<li><%= link_to "印刷",staffs_path%></li>
-			</ul>
-		</li>
+    <label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel1",class="sidelabel",><i class="fi-torso"> </i>スタッフ管理</label>
+    <input type="checkbox" id="Panel1" class="on-off" />
+    <ul>
+        <li><%= link_to '<i class="fi-torsos"> </i>新規登録'.html_safe,new_staff_path %></li>
+        <li><%= link_to '<i class="fi-male-female"> </i>一覧表示'.html_safe,staffs_path%></li>
+    </ul>
+
+    <label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel12",class="sidelabel"><i class="fi-torso-business"> </i>ケアマネ管理</label>
+    <input type="checkbox" id="Panel12" class="on-off" />
+    <ul>
+        <li><%= link_to '<i class="fi-torsos-female-male"> </i>新規登録'.html_safe,new_caremanager_path%></li>
+        <li><%= link_to '<i class="fi-torsos-all"> </i>一覧表示'.html_safe,caremanagers_path%></li>
+    </ul>
+
+	<label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel13",class="sidelabel"><i class="fi-blind"> </i>利用者管理</label>
+	<input type="checkbox" id="Panel13" class="on-off" />
+    <ul>
+        <li><%= link_to '<i class="fi-wheelchair"> </i>新規登録'.html_safe,new_customer_path%></li>
+        <li><%= link_to '<i class="fi-social-skillshare"> </i>一覧表示'.html_safe,customers_path%></li>
+    </ul>
+
+	<label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel14",class="sidelabel"><i class="fi-pencil"> </i>介護記録管理</label>
+	<input type="checkbox" id="Panel14" class="on-off" />
+	<ul>
+		<li><%= link_to '<i class="fi-clipboard-pencil"> </i>新規作成'.html_safe,new_caremanager_path%></li>
+		<li><%= link_to '<i class="fi-magnifying-glass"> </i>検索'.html_safe,caremanagers_path%></li>
+	</ul>
+
+	<label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel15",class="sidelabel"><i class="fi-clipboard-notes"> </i>連絡帳管理</label>
+	<input type="checkbox" id="Panel15" class="on-off" />
+	<ul>
+		<li><%= link_to '<i class="fi-list-bullet"> </i>一覧表示'.html_safe,caremanagers_path%></li>
+		<li><%= link_to '<i class="fi-clipboard-notes"> </i>印刷'.html_safe,staffs_path%></li>
+	</ul>
 	</ul>
 </div>
+
+
+
 <!--ここに本文-->
 <div class="main">
 	<%= yield %>

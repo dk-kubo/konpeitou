@@ -37,9 +37,6 @@
         <td><%= caremanager.phone_num %></td>
         <td><%= caremanager.company %></td>
         <td><%= caremanager.status_text %></td>
-        <td><%= link_to '詳細', caremanager %></td>
-        <td><%= link_to '編集', edit_caremanager_path(caremanager) %></td>
-        <td><%= link_to '削除', caremanager, method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在職ステータス」を変更してください。それでもよろしいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
