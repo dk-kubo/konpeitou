@@ -22,35 +22,35 @@
 </header>
 <div class="sidebar" id="accordion">
 	<ul id="dropmenu">
-    <label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel1",class="sidelabel",><i class="fi-torso"> </i>スタッフ管理</label>
+    <label for="Panel1",class="sidelabel",><i class="fi-torso"> </i>スタッフ管理</label>
     <input type="checkbox" id="Panel1" class="on-off" />
     <ul>
         <li><%= link_to '<i class="fi-torsos"> </i>新規登録'.html_safe,new_staff_path %></li>
         <li><%= link_to '<i class="fi-male-female"> </i>一覧表示'.html_safe,staffs_path%></li>
     </ul>
 
-    <label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel12",class="sidelabel"><i class="fi-torso-business"> </i>ケアマネ管理</label>
+    <label for="Panel12",class="sidelabel"><i class="fi-torso-business"> </i>ケアマネ管理</label>
     <input type="checkbox" id="Panel12" class="on-off" />
     <ul>
         <li><%= link_to '<i class="fi-torsos-female-male"> </i>新規登録'.html_safe,new_caremanager_path%></li>
         <li><%= link_to '<i class="fi-torsos-all"> </i>一覧表示'.html_safe,caremanagers_path%></li>
     </ul>
 
-	<label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel13",class="sidelabel"><i class="fi-blind"> </i>利用者管理</label>
+	<label for="Panel13",class="sidelabel"><i class="fi-blind"> </i>利用者管理</label>
 	<input type="checkbox" id="Panel13" class="on-off" />
     <ul>
         <li><%= link_to '<i class="fi-wheelchair"> </i>新規登録'.html_safe,new_customer_path%></li>
         <li><%= link_to '<i class="fi-social-skillshare"> </i>一覧表示'.html_safe,customers_path%></li>
     </ul>
 
-	<label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel14",class="sidelabel"><i class="fi-pencil"> </i>介護記録管理</label>
+	<label for="Panel14",class="sidelabel"><i class="fi-pencil"> </i>介護記録管理</label>
 	<input type="checkbox" id="Panel14" class="on-off" />
 	<ul>
 		<li><%= link_to '<i class="fi-clipboard-pencil"> </i>新規作成'.html_safe,new_caremanager_path%></li>
 		<li><%= link_to '<i class="fi-magnifying-glass"> </i>検索'.html_safe,caremanagers_path%></li>
 	</ul>
 
-	<label style="font-size:20px;color: #fff;padding: 20px 10px 20px 25px;display: block;margin: 0;", for="Panel15",class="sidelabel"><i class="fi-clipboard-notes"> </i>連絡帳管理</label>
+	<label for="Panel15",class="sidelabel"><i class="fi-clipboard-notes"> </i>連絡帳管理</label>
 	<input type="checkbox" id="Panel15" class="on-off" />
 	<ul>
 		<li><%= link_to '<i class="fi-list-bullet"> </i>一覧表示'.html_safe,caremanagers_path%></li>

@@ -99,8 +99,6 @@
 </table>
 <p></p>
 <div class="btn_zone">
-  <%= link_to '編集', edit_customer_path(@customer), class: "edit_btn" %> |
-  <%= link_to '戻る', customers_path, class: "index_btn" %> |
   <%= link_to '削除', customers_path(@customer), method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在籍ステータス」を変更してください。それでもよろしいですか？' }, class: "delete_btn" %>
 </div>
 

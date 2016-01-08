@@ -62,7 +62,7 @@ a:hover {
   width: 20%;
   float: left;
   padding:30px 0;
-  background-color: #1e282c;
+  background-color: #222D32;
 }
 .sidebar ul{
   padding-left: 20px;
@@ -160,7 +160,6 @@ p {
 input[type="checkbox"].on-off{
     display: none;
 }
-
 .sidebar ul {
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -187,17 +186,11 @@ input[type="checkbox"].on-off + ul{
 input[type="checkbox"].on-off:checked + ul{
     height: 90px;
 }
-
-
-
-
 #dropmenu {
   list-style-type: none;
   margin: auto;
   padding-left: 0px;
-
 }
-
 #dropmenu li {
   padding: 0;
 }
@@ -219,13 +212,29 @@ input[type="checkbox"].on-off:checked + ul{
   list-style: none;
   margin: 0;
   padding: 0;
-}#dropmenu ul li a{
+}
+#dropmenu ul li a{
   padding: 15px 35px 15px 30px;
   text-align: left;
   font-size: 12px;
+  color: #7D959F;
   font-weight: normal;
   background: #2C3B41;
 }
+#dropmenu label{
+  font-size:20px;
+  color: #B7C6CD;
+  padding: 20px 10px 20px 25px;
+  display: block;
+  margin: 0;
+}
+#dropmenu label:hover{
+  color: white;
+}
+#dropmenu ul li a:hover{
+  color: white;
+}
+
 
 /* ボタン ================================ */
 .edit_btn {
