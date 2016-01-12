@@ -1,0 +1,189 @@
+<%= form_for(@care_record) do |f| %>
+  <% if @care_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@care_record.errors.count, "error") %> prohibited this care_record from being saved:</h2>
+
+      <ul>
+      <% @care_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="form_care_record">
+    <tr>
+      <td class="title_care_record"><%= f.label :日付 %></td>
+      <th class="input_care_record"><%= f.date_select :day %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :到着時間 %></td>
+      <th class="input_care_record"><%= f.time_select :arrive_time %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :出発時間 %></td>
+      <th class="input_care_record"><%= f.time_select :leave_time %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :血圧 %></td>
+      <th class="input_care_record"><%= f.text_field :blood_pressure %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :脈 %></td>
+      <th class="input_care_record"><%= f.text_field :pulse %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :体温 %></td>
+      <th class="input_care_record"><%= f.text_field :temperature %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :服薬 %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:medichine, "有") %>
+        <%= f.label :medichine, '有', :value => "有" %>
+        <%= f.radio_button(:medichine, "無") %>
+        <%= f.label :medichine, '無', :value => "無" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :処置 %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:treatment, "目薬") %>
+        <%= f.label :treatment, '目薬', :value => "目薬" %>
+        <%= f.radio_button(:treatment, "軟膏") %>
+        <%= f.label :treatment, '軟膏', :value => "軟膏" %>
+        <%= f.radio_button(:treatment, "うがい手洗い") %>
+        <%= f.label :treatment, 'うがい手洗い', :value => "うがい手洗い" %>
+        <%= f.radio_button(:treatment, "口腔ケア") %>
+        <%= f.label :treatment, '口腔ケア', :value => "口腔ケア" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :食事摂取量 %></td>
+      <th class="input_care_record"><%= f.text_field :dietary_intake %>割</th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :水分摂取量 %></td>
+      <th class="input_care_record"><%= f.text_field :water_intake %>CC</th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :外での歩行練習 %></td>
+      <th class="input_care_record"><%= f.text_field :gait_training %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :距離 %></td>
+      <th class="input_care_record"><%= f.number_field :distance %>m</th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :トイレの回数 %></td>
+      <th class="input_care_record"><%= f.text_field :toilet %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :体操 %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:stretch, "積極的参加") %>
+        <%= f.label :stretch, '積極的参加', :value => "積極的参加" %>
+        <%= f.radio_button(:stretch, "参加") %>
+        <%= f.label :stretch, '参加', :value => "参加" %>
+        <%= f.radio_button(:stretch, "消極的参加") %>
+        <%= f.label :stretch, '消極的参加', :value => "消極的参加" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :口腔体操 %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:oral_stretch, "積極的参加") %>
+        <%= f.label :oral_stretch, '積極的参加', :value => "積極的参加" %>
+        <%= f.radio_button(:oral_stretch, "参加") %>
+        <%= f.label :oral_stretch, '参加', :value => "参加" %>
+        <%= f.radio_button(:oral_stretch, "消極的参加") %>
+        <%= f.label :oral_stretch, '消極的参加', :value => "消極的参加" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :レクリエーション %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:recreation, "積極的参加") %>
+        <%= f.label :recreation, '積極的参加', :value => "積極的参加" %>
+        <%= f.radio_button(:recreation, "参加") %>
+        <%= f.label :recreation, '参加', :value => "参加" %>
+        <%= f.radio_button(:recreation, "消極的参加") %>
+        <%= f.label :recreation, '消極的参加', :value => "消極的参加" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :形態 %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:bathing, "一般入浴") %>
+        <%= f.label :bathing, '一般入浴', :value => "一般入浴" %>
+        <%= f.radio_button(:bathing, "シャワー浴") %>
+        <%= f.label :bathing, 'シャワー浴', :value => "シャワー浴" %>
+        <%= f.radio_button(:bathing, "清拭") %>
+        <%= f.label :bathing, '清拭', :value => "清拭" %>
+        <%= f.radio_button(:bathing, "洗髪") %>
+        <%= f.label :bathing, '洗髪', :value => "洗髪" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :行為 %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:act, "見守り") %>
+        <%= f.label :act, '見守り', :value => "見守り" %>
+        <%= f.radio_button(:act, "部介助") %>
+        <%= f.label :act, '部介助', :value => "部介助" %>
+        <%= f.radio_button(:act, "全介助") %>
+        <%= f.label :act, '全介助', :value => "全介助" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :着脱 %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:detachable, "見守り") %>
+        <%= f.label :detachable, '見守り', :value => "見守り" %>
+        <%= f.radio_button(:detachable, "部介助") %>
+        <%= f.label :detachable, '部介助', :value => "部介助" %>
+        <%= f.radio_button(:detachable, "全介助") %>
+        <%= f.label :detachable, '全介助', :value => "全介助" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :【連絡帳記載内容】 %></td>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :施術内容 %></td>
+      <th class="input_care_record"><%= f.text_field :training %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :散歩 %></td>
+      <th class="input_care_record">
+        <%= f.radio_button(:walking, "町内") %>
+        <%= f.label :walking, '町内', :value => "町内" %>
+        <%= f.radio_button(:walking, "公園") %>
+        <%= f.label :walking, '公園', :value => "公園" %>
+        <%= f.radio_button(:walking, "その他") %>
+        <%= f.label :walking, 'その他', :value => "その他" %>
+        <%= f.radio_button(:walking, "不参加") %>
+        <%= f.label :walking, '不参加', :value => "不参加" %>
+      </th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :レクリエーション %></td>
+      <th class="input_care_record"><%= f.text_field :rec_name %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :食事量 %></td>
+      <th class="input_care_record">0<%= f.range_field :meal_size ,{ :size => 10,:maxlength =>15,:max=>10,:min=>0}%>10</th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :本日の連絡事項 %></td>
+      <th class="input_care_record"><%= f.text_area :contact %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :ご家族からのご意見連絡等 %></td>
+      <th class="input_care_record"><%= f.text_area :opinion %></th>
+    </tr>
+  </table>
+  <div class="actions">
+    <%= f.submit '作成', :confirm => '登録してもよろしいですか？', :disable_with =>'登録中...' %>
+  </div>
+<% end %>

@@ -20,11 +20,11 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.reception_day %></td>
+        <td><%= customer.reception_day.strftime("%Y年%m月%d日") %></td>
         <td><%= customer.insure_num %></td>
         <td><%= link_to customer.name ,customer %></td>
         <td><%= customer.sex_text %></td>
-        <td><%= customer.birth %></td>
+        <td><%= customer.birth.strftime("%Y年%m月%d日") %></td>
         <td><%= customer.home_num %></td>
         <td><%= customer.mail %></td>
         <td><%= customer.status_text %></td>
@@ -32,11 +32,11 @@
     <% end %>
     <% @customers2.each do |customer| %>
       <tr>
-        <td><%= customer.reception_day %></td>
+        <td><%= customer.reception_day.strftime("%Y年%m月%d日") %></td>
         <td><%= customer.insure_num %></td>
         <td><%= link_to customer.name ,customer %></td>
         <td><%= customer.sex_text %></td>
-        <td><%= customer.birth %></td>
+        <td><%= customer.birth.strftime("%Y年%m月%d日") %></td>
         <td><%= customer.home_num %></td>
         <td><%= customer.mail %></td>
         <td><%= customer.status_text %></td>

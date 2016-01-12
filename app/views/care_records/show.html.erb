@@ -1,0 +1,103 @@
+<p id="notice"><%= notice %></p>
+
+<table class="detail_table_care_record">
+  <tr>
+    <td class="title_care_record"><strong>日付</strong></td>
+    <th class="input_care_record"><%= @care_record.day.strftime("%Y年%m月%d日") %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>到着時間</strong></td>
+    <th class="input_care_record"><%= @care_record.arrive_time.strftime("%H:%M") %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>出発時間</strong></td>
+    <th class="input_care_record"><%= @care_record.leave_time.strftime("%H:%M") %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>血圧</strong></td>
+    <th class="input_care_record"><%= @care_record.blood_pressure %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>脈</strong></td>
+    <th class="input_care_record"><%= @care_record.pulse %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>体温</strong></td>
+    <th class="input_care_record"><%= @care_record.temperature %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>服薬</strong></td>
+    <th class="input_care_record"><%= @care_record.medichine %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>処置</strong></td>
+    <th class="input_care_record"><%= @care_record.treatment %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>食事摂取量</strong></td>
+    <th class="input_care_record"><%= @care_record.dietary_intake %>割</th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>水分摂取量</strong></td>
+    <th class="input_care_record"><%= @care_record.water_intake %>CC</th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>外での歩行練習</strong></td>
+    <th class="input_care_record"><%= @care_record.gait_training %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>距離</strong></td>
+    <th class="input_care_record"><%= @care_record.distance %>m</th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>トイレの回数</strong></td>
+    <th class="input_care_record"><%= @care_record.toilet %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>体操</strong></td>
+    <th class="input_care_record"><%= @care_record.stretch %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>口腔体操</strong></td>
+    <th class="input_care_record"><%= @care_record.oral_stretch %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>レクリエーション</strong></td>
+    <th class="input_care_record"><%= @care_record.recreation %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>形態</strong></td>
+    <th class="input_care_record"><%= @care_record.bathing %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>行為</strong></td>
+    <th class="input_care_record"><%= @care_record.act %></th>
+  </tr>
+  <tr>
+    <td class="title_care_record"><strong>着脱</strong></td>
+    <th class="input_care_record"><%= @care_record.detachable %></th>
+  </tr>
+</table>
+
+
+
+<%= link_to '編集', edit_care_record_path(@care_record) %> |
+<%= link_to '一覧', care_records_path %> |
+<%= link_to '連絡帳', contact_path(@care_record) %>
+
+
+
+<input type="checkbox" class="check" id="checked">
+<label class="menu-btn" for="checked">
+        <span class="bar top"></span>
+        <span class="bar middle"></span>
+        <span class="bar bottom"></span>
+        <span class="menu-btn__text">MENU</span>
+</label>
+<label class="close-menu" for="checked"></label>
+<nav class="drawer-menu">
+        <ul>
+            <li><%= link_to '編集', edit_care_record_path(@care_record) %></li>
+            <li><%= link_to '一覧', care_records_path %></li>
+        </ul>
+</nav>

@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td class="title_caremaneger" style="text-align:center;"><strong>生年月日</strong></td>
-    <th class="input_caremaneger"><%= @caremanager.birth %></th>
+    <th class="input_caremaneger"><%= @caremanager.birth.strftime("%Y年%m月%d日") %></th>
   </tr>
   <tr>
     <td class="title_caremaneger" style="text-align:center;"><strong>年齢</strong></td>

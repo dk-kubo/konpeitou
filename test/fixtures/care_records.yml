@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: 2016-01-11
+  arrive_time: 2016-01-11 05:37:42
+  leave_time: 2016-01-11 05:37:42
+  blood_pressure: MyString
+  pulse: MyString
+  temperature: 1
+  medichine: MyString
+  treatment: MyString
+  dietary_intake: MyString
+  water_intake: MyString
+  gait_training: MyString
+  distance: 1
+  toilet: MyString
+  stretch: MyString
+  oral_stretch: MyString
+  recreation: MyString
+  form: MyString
+  act: MyString
+  detachable: MyString
+  training: MyString
+  walking: MyString
+  rec_name: MyString
+  bathing: MyString
+  meal_size: 1
+  contact: MyText
+  opinion: MyText
+  staff_id_id: 
+  customer_id_id: 
+
+two:
+  day: 2016-01-11
+  arrive_time: 2016-01-11 05:37:42
+  leave_time: 2016-01-11 05:37:42
+  blood_pressure: MyString
+  pulse: MyString
+  temperature: 1
+  medichine: MyString
+  treatment: MyString
+  dietary_intake: MyString
+  water_intake: MyString
+  gait_training: MyString
+  distance: 1
+  toilet: MyString
+  stretch: MyString
+  oral_stretch: MyString
+  recreation: MyString
+  form: MyString
+  act: MyString
+  detachable: MyString
+  training: MyString
+  walking: MyString
+  rec_name: MyString
+  bathing: MyString
+  meal_size: 1
+  contact: MyText
+  opinion: MyText
+  staff_id_id: 
+  customer_id_id: 

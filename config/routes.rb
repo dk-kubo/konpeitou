@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :care_records
+  match '/contact', to: 'care_records#contact', via: 'get'
   resources :customers
   resources :caremanagers
   match '/care_top', to: 'caremanagers#care_top', via: 'get'

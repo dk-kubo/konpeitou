@@ -64,19 +64,19 @@
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :Tel %></td>
-    <th class="input_cus"><%= f.text_field :home_num %></th>
+    <th class="input_cus"><%= f.telephone_field :home_num,{ :max=>11, :min=>10} %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :携帯 %></td>
-    <th class="input_cus"><%= f.text_field :phone_num %></th>
+    <th class="input_cus"><%= f.telephone_field :phone_num,{ :max=>11, :min=>11} %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :FAX %></td>
-    <th class="input_cus"><%= f.text_field :fax %></th>
+    <th class="input_cus"><%= f.telephone_field :fax %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :メール %></td>
-    <th class="input_cus"><%= f.text_field :mail %></th>
+    <th class="input_cus"><%= f.email_field :mail %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :家族情報 %></td>
@@ -113,6 +113,10 @@
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :在職ステータス %></td>
     <th class="input_cus"><%= f.select :status, Customer.status.options %></th>
+  </tr>
+  <tr>
+    <td class="title_cus" style="text-align:center;"><%= f.label :ケアマネージャー %></td>
+    <th class="input_cus"><%= f.collection_select :caremanager_id, Caremanager.all, :id, :name%></th>
   </tr>
 </table>
 

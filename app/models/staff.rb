@@ -1,5 +1,6 @@
 class Staff < ActiveRecord::Base
 	has_many :customers, dependent: :destroy
+	has_many :care_records, dependent: :destroy
 
 	extend Enumerize
 

@@ -13,6 +13,7 @@ class CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @cus_families = @customer.cus_families.all
+    @caremanagers = Caremanager.where(caremanager_id: @caremanager_id)
   end
 
   # GET /customers/new
@@ -73,12 +74,12 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:insure_num, :name, :name_kana, :sex, :birth, :postal_code, :address, :home_num, :phone_num, :fax, :mail, :reception_day, :history_of_consul, :demand, :household, :family_situation, :caremanager,:status, :staff_id,
+      params.require(:customer).permit(:insure_num, :name, :name_kana, :sex, :birth, :postal_code, :address, :home_num, :phone_num, :fax, :mail, :reception_day, :history_of_consul, :demand, :household, :family_situation, :caremanager_id,:status, :staff_id,
         cus_families_attributes: [:name, :relation, :living, :address, :contact, :_destroy])
     end
 
     def  update_customer_params
-      params.require(:customer).permit(:insure_num, :name, :name_kana, :sex, :birth, :postal_code, :address, :home_num, :phone_num, :fax, :mail, :reception_day, :history_of_consul, :demand, :household, :family_situation, :caremanager,:status, :staff_id,
+      params.require(:customer).permit(:insure_num, :name, :name_kana, :sex, :birth, :postal_code, :address, :home_num, :phone_num, :fax, :mail, :reception_day, :history_of_consul, :demand, :household, :family_situation, :caremanager_id,:status, :staff_id,
         cus_families_attributes: [:name, :relation, :living, :address, :contact, :_destroy, :id])
     end
 end

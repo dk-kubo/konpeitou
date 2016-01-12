@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229132746) do
+ActiveRecord::Schema.define(version: 20160112122655) do
+
+  create_table "care_records", force: :cascade do |t|
+    t.date     "day"
+    t.time     "arrive_time"
+    t.time     "leave_time"
+    t.string   "blood_pressure"
+    t.string   "pulse"
+    t.decimal  "temperature"
+    t.string   "medichine"
+    t.string   "treatment"
+    t.string   "dietary_intake"
+    t.string   "water_intake"
+    t.string   "gait_training"
+    t.integer  "distance"
+    t.string   "toilet"
+    t.string   "stretch"
+    t.string   "oral_stretch"
+    t.string   "recreation"
+    t.string   "act"
+    t.string   "detachable"
+    t.string   "training"
+    t.string   "walking"
+    t.string   "rec_name"
+    t.string   "bathing"
+    t.integer  "meal_size"
+    t.text     "contact"
+    t.text     "opinion"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "caremanagers", force: :cascade do |t|
     t.string   "name"
@@ -60,6 +90,7 @@ ActiveRecord::Schema.define(version: 20151229132746) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "status"
+    t.integer  "caremanager_id"
   end
 
   create_table "staffs", force: :cascade do |t|

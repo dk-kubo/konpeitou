@@ -53,15 +53,15 @@
     </tr>
     <tr>
       <td class="title_staff" style="text-align:center;"><%= f.label :携帯番号 %></td>
-      <th class="input_staff"><%= f.text_field :phone_num %></th>
+      <th class="input_staff"><%= f.telephone_field :phone_num,{ :max=>11, :min=>11} %></th>
     </tr>
     <tr>
       <td class="title_staff" style="text-align:center;"><%= f.label :自宅番号 %></td>
-      <th class="input_staff"><%= f.text_field :home_num %></th>
+      <th class="input_staff"><%= f.telephone_field :home_num,{ :max=>11, :min=>10} %></th>
     </tr>
     <tr>
       <td class="title_staff" style="text-align:center;"><%= f.label :メールアドレス %></td>
-      <th class="input_staff"><%= f.text_field :mail %></th>
+      <th class="input_staff"><%= f.email_field :mail %></th>
     </tr>
     <tr>
       <td class="title_staff" style="text-align:center;"><%= f.label :役職 %></td>

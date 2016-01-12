@@ -53,11 +53,11 @@
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :携帯番号 %></td>
-      <th class="input_caremaneger"><%= f.text_field :phone_num %></th>
+      <th class="input_caremaneger"><%= f.telephone_field :phone_num,{ :max=>11, :min=>10} %></th>
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :メールアドレス %></td>
-      <th class="input_caremaneger"><%= f.text_field :mail %></th>
+      <th class="input_caremaneger"><%= f.email_field :mail %></th>
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :所属社名 %></td>

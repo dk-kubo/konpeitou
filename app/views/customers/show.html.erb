@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>受付日</strong></td>
-    <th class="input_cus"><%= @customer.reception_day %></th>
+    <th class="input_cus"><%= @customer.reception_day.strftime("%Y年%m月%d日") %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>被保険者番号</strong></td>
@@ -23,7 +23,7 @@
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>生年月日</strong></td>
-    <th class="input_cus"><%= @customer.birth %></th>
+    <th class="input_cus"><%= @customer.birth.strftime("%Y年%m月%d日") %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>郵便番号</strong></td>
@@ -95,6 +95,10 @@
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>在籍ステータス</strong></td>
     <th class="input_cus"><%= @customer.status_text %></th>
+  </tr>
+  <tr>
+    <td class="title_cus" style="text-align:center;"><strong>担当ケアマネージャー</strong></td>
+    <th class="input_cus"><%= @customer.caremanager.name %></th>
   </tr>
 </table>
 <p></p>

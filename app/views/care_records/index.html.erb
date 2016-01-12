@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<center>
+  <h1>介護記録一覧</h1>
+</center>
+
+<table>
+  <thead>
+    <tr class="title_care_record">
+      <th>日付</th>
+      <th>到着時間</th>
+      <th>出発時間</th>
+      <th>血圧</th>
+      <th>脈</th>
+      <th>体温</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @care_records.each do |care_record| %>
+      <tr>
+        <td><%= link_to care_record.day.strftime("%Y年%m月%d日") ,care_record %></td>
+        <td><%= care_record.arrive_time.strftime("%H:%M") %></td>
+        <td><%= care_record.leave_time.strftime("%H:%M") %></td>
+        <td><%= care_record.blood_pressure %></td>
+        <td><%= care_record.pulse %></td>
+        <td><%= care_record.temperature %>度</td>
+        <td><%= link_to '削除', care_record, method: :delete, data: { confirm: '削除すると復元できませんがよろしいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規作成', new_care_record_path %>
