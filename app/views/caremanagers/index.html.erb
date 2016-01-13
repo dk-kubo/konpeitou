@@ -3,6 +3,23 @@
   <h1>ケアマネージャー一覧</h1>
 </center>
 
+<fieldset class="search_zone"><legend>検索</legend>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :name_start, "ケアマネ番号：" %>
+    <%= f.search_field :id_eq %><br>
+    <%= f.label :name_start, "氏名　　　　：" %>
+    <%= f.search_field :name_start %><br>
+    <%= f.label :name_kana_start, "カナ　　　　：" %>
+    <%= f.search_field :name_kana_start %><br>
+    <%= f.label :company_start, "会社名　　　：" %>
+    <%= f.collection_select( :company,@caremanagers, :company, :company)%><br>
+    <%# 検索ボタン %>
+    <%= f.submit '検索' %>
+  <% end %>
+</fieldset>
+
+<br>
+
 <table>
   <thead>
     <tr class="title_caremaneger">
@@ -22,7 +39,7 @@
         <td><%= caremanager.id %></td>
         <td><%= link_to caremanager.name, caremanager %></td>
         <td><%= caremanager.sex_text %></td>
-        <td><%= caremanager.age %></td>
+        <td><%= caremanager.age %>歳</td>
         <td><%= caremanager.phone_num %></td>
         <td><%= caremanager.company %></td>
         <td><%= caremanager.status_text %></td>
@@ -33,7 +50,7 @@
         <td><%= caremanager.id %></td>
         <td><%= link_to caremanager.name, caremanager %></td>
         <td><%= caremanager.sex_text %></td>
-        <td><%= caremanager.age %></td>
+        <td><%= caremanager.age %>歳</td>
         <td><%= caremanager.phone_num %></td>
         <td><%= caremanager.company %></td>
         <td><%= caremanager.status_text %></td>

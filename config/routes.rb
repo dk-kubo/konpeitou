@@ -4,12 +4,10 @@ Rails.application.routes.draw do
   match '/contact', to: 'care_records#contact', via: 'get'
   resources :customers
   resources :caremanagers
-  match '/care_top', to: 'caremanagers#care_top', via: 'get'
 
-  root 'home#top'
+  root 'care_records#index_top'
 
   resources :staffs
-  match '/s_top', to: 'staffs#s_top', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

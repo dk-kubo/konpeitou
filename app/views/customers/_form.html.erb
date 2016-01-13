@@ -20,12 +20,13 @@
           :reception_day,
           start_year: 2010,
           end_year:   (Time.now.year),
-          default:    Date.new(Time.now.year)) %>
+          default:    Date.new(Time.now.year),
+          use_month_numbers: true, date_separator: ' / ') %>
       </th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :被保険者番号 %></td>
-    <th class="input_cus"><%= f.number_field :insure_num %></th>
+    <th class="input_cus"><%= f.number_field :insure_num, placeholder: "No." %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :名前 %></td>
@@ -51,16 +52,17 @@
           :birth,
           start_year: 1920,
           end_year:   (Time.now.year),
-          default:    Date.new(1989, 1, 1)) %>
+          default:    Date.new(1989, 1, 1),
+          use_month_numbers: true, date_separator: ' / ') %>
       </th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :郵便番号 %></td>
-    <th class="input_cus"><%= f.text_field :postal_code %></th>
+    <th class="input_cus"><%= f.text_field :postal_code, placeholder: "◯ ◯ ◯ ー ◯ ◯ ◯ ◯" %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :住所 %></td>
-    <th class="input_cus"><%= f.text_area :address %></th>
+    <th class="input_cus"><%= f.text_area :address, :size=>"100x2" %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :Tel %></td>
@@ -76,7 +78,11 @@
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :メール %></td>
-    <th class="input_cus"><%= f.email_field :mail %></th>
+    <th class="input_cus"><%= f.email_field :mail, placeholder: "@example.co.jp" %></th>
+  </tr>
+  <tr>
+    <td class="title_cus" style="text-align:center;"><%= f.label :ケアマネージャー %></td>
+    <th class="input_cus"><%= f.collection_select :caremanager_id, Caremanager.all, :id, :name%></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :家族情報 %></td>
@@ -86,14 +92,14 @@
         <% end %>
         <%= link_to_add_fields "家族追加", f, :cus_families %>
       </th>
-  </tr> 
+  </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :相談の経緯 %></td>
-    <th class="input_cus"><%= f.text_area :history_of_consul %></th>
+    <th class="input_cus"><%= f.text_area :history_of_consul, :size=>"100x3" %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :主訴・要望 %></td>
-    <th class="input_cus"><%= f.text_area :demand %></th>
+    <th class="input_cus"><%= f.text_area :demand, :size=>"100x3" %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :世帯 %></td>
@@ -108,15 +114,11 @@
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :家族状況 %></td>
-    <th class="input_cus"><%= f.text_area :family_situation %></th>
+    <th class="input_cus"><%= f.text_area :family_situation, :size=>"100x2" %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :在職ステータス %></td>
     <th class="input_cus"><%= f.select :status, Customer.status.options %></th>
-  </tr>
-  <tr>
-    <td class="title_cus" style="text-align:center;"><%= f.label :ケアマネージャー %></td>
-    <th class="input_cus"><%= f.collection_select :caremanager_id, Caremanager.all, :id, :name%></th>
   </tr>
 </table>
 

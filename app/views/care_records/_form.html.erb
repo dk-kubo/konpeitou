@@ -14,7 +14,7 @@
   <table class="form_care_record">
     <tr>
       <td class="title_care_record"><%= f.label :日付 %></td>
-      <th class="input_care_record"><%= f.date_select :day %></th>
+      <th class="input_care_record"><%= f.date_select :day,{use_month_numbers: true, date_separator: ' / ' }%></th>
     </tr>
     <tr>
       <td class="title_care_record"><%= f.label :到着時間 %></td>
@@ -176,11 +176,11 @@
     </tr>
     <tr>
       <td class="title_care_record"><%= f.label :本日の連絡事項 %></td>
-      <th class="input_care_record"><%= f.text_area :contact %></th>
+      <th class="input_care_record"><%= f.text_area :contact, :size=>"60x2" %></th>
     </tr>
     <tr>
       <td class="title_care_record"><%= f.label :ご家族からのご意見連絡等 %></td>
-      <th class="input_care_record"><%= f.text_area :opinion %></th>
+      <th class="input_care_record"><%= f.text_area :opinion, :size=>"60x2" %></th>
     </tr>
   </table>
   <div class="actions">

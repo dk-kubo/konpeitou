@@ -1,21 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<center>
-  <h1>介護記録一覧</h1>
-</center>
-
-<fieldset class="search_zone"><legend>検索</legend>
-  <%= search_form_for @q do |f| %>
-    <%= f.label :name_start, "日付：" %>
-    <%= f.date_select :day_gt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %>〜
-    <%= f.date_select :day_lt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %><br/>
-    <%= f.label :id, "介護記録No.：" %>
-    <%= f.search_field :id_eq, placeholder: "完全一致" %><br/>
-    <%# 検索ボタン %>
-    <%= f.submit '検索' %>
-  <% end %>
-</fieldset>
-<br>
+<h1>本日の介護記録作成状況</h1>
 
 <table>
   <thead>
@@ -33,9 +17,9 @@
   <tbody>
     <% @care_records.each do |care_record| %>
       <tr>
-        <td><%= link_to care_record.id,care_record %></td>
+        <td><%= link_to care_record.id ,care_record %></td>
         <td><%= care_record.day.strftime("%Y年%m月%d日") %></td>
-        <td>名前が入る予定</td>
+        <td>様</td>
         <td><%= care_record.arrive_time.strftime("%H:%M") %></td>
         <td><%= care_record.leave_time.strftime("%H:%M") %></td>
         <td><%= care_record.temperature %>度</td>
@@ -44,7 +28,6 @@
     <% end %>
   </tbody>
 </table>
-
 
 <br>
 

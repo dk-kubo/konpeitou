@@ -4,16 +4,11 @@ class CaremanagersController < ApplicationController
   # GET /caremanagers
   # GET /caremanagers.json
 
-  def care_top
-  end
-
-  def method_name
-    
-  end
-
   def index
     @caremanagers = Caremanager.where(status:1)
     @caremanagers2 = Caremanager.where(status:2)
+    @q        = Caremanager.search(params[:q])
+    @caremanagers = @q.result(distinct: true)
   end
 
   # GET /caremanagers/1

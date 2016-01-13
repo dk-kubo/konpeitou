@@ -5,6 +5,12 @@ class CareRecordsController < ApplicationController
   # GET /care_records.json
   def index
     @care_records = CareRecord.all
+    @q        = CareRecord.search(params[:q])
+    @care_records = @q.result(distinct: true)
+  end
+
+  def index_top
+    @care_records = CareRecord.where(day:Date.today)
   end
 
   # GET /care_records/1
@@ -61,6 +67,7 @@ class CareRecordsController < ApplicationController
     end
 
     def contact
+      @care_record = Care_Record.find(params[:id])
     end
   end
 

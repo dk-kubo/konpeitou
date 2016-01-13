@@ -288,3 +288,15 @@ input[type="checkbox"].on-off:checked + ul{
 .btn_zone a:hover{
     color: #ff0000;
 }
+
+/* search_zone ================================ */
+.search_zone{
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px 5px 10px 20px;
+  width: 90%;
+  border-radius: 10px;
+}
+.search_zone legend{
+  background-color: white;
+}

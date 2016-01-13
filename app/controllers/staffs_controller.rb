@@ -2,14 +2,13 @@ class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
 
 
-  def s_top
-  end
-
   # GET /staffs
   # GET /staffs.json
   def index
     @staffs = Staff.where(status:1)
     @staffs2 = Staff.where(status:2)
+    @q        = Staff.search(params[:q])
+    @staffs = @q.result(distinct: true)
   end
 
   # GET /staffs/1
