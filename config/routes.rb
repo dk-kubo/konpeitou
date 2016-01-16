@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :caremanagers
 
-  #root 'care_records#index_top'
+  root 'care_records#index_top'
 
   resources :staffs
 
@@ -63,7 +63,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  devise_scope :normal do
-    root :to => "devise/sessions#new"
-  end
+
 end
