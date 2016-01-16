@@ -29,12 +29,12 @@
     <th class="input_cus"><%= f.number_field :insure_num, placeholder: "No." %></th>
   </tr>
   <tr>
-    <td class="title_cus" style="text-align:center;"><%= f.label :名前 %></td>
-    <th class="input_cus"><%= f.text_field :name %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :氏名（全角漢字） %></td>
+    <th class="input_cus"><%= f.text_field :name, :size=>"30x1", placeholder: "全角漢字で入力してください。" %></th>
   </tr>
   <tr>
-    <td class="title_cus" style="text-align:center;"><%= f.label :カナ %></td>
-    <th class="input_cus"><%= f.text_field :name_kana %></th>
+    <td class="title_cus" style="text-align:center;"><%= f.label :氏名（全角カナ） %></td>
+    <th class="input_cus"><%= f.text_field :name_kana, :size=>"30x1", placeholder: "全角カナで入力してください。" %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :性別 %></td>
@@ -58,7 +58,7 @@
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :郵便番号 %></td>
-    <th class="input_cus"><%= f.text_field :postal_code, placeholder: "◯ ◯ ◯ ー ◯ ◯ ◯ ◯" %></th>
+    <th class="input_cus"><%= f.text_field :postal_code, placeholder: "ー（ハイフン）は入れないでください。" %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :住所 %></td>
@@ -66,11 +66,11 @@
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :Tel %></td>
-    <th class="input_cus"><%= f.telephone_field :home_num,{ :max=>11, :min=>10} %></th>
+    <th class="input_cus"><%= f.telephone_field :home_num %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :携帯 %></td>
-    <th class="input_cus"><%= f.telephone_field :phone_num,{ :max=>11, :min=>11} %></th>
+    <th class="input_cus"><%= f.telephone_field :phone_num %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><%= f.label :FAX %></td>

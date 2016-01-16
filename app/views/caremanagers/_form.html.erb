@@ -13,12 +13,12 @@
 
   <table class="form_caremaneger">
     <tr>
-      <td class="title_caremaneger" style="text-align:center;"><%= f.label :名前 %></td>
-      <th class="input_caremaneger"><%= f.text_field :name %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :氏名（全角漢字） %></td>
+      <th class="input_caremaneger"><%= f.text_field :name, :size=>"30x1", placeholder: "全角漢字で入力してください。" %></th>
     </tr>
     <tr>
-      <td class="title_caremaneger" style="text-align:center;"><%= f.label :カナ %></td>
-      <th class="input_caremaneger"><%= f.text_field :name_kana %></th>
+      <td class="title_caremaneger" style="text-align:center;"><%= f.label :氏名（全角カナ） %></td>
+      <th class="input_caremaneger"><%= f.text_field :name_kana, :size=>"30x1", placeholder: "全角カナで入力してください。" %></th>
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :性別 %></td>
@@ -42,19 +42,19 @@
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :年齢 %></td>
-      <th class="input_caremaneger"><%= f.number_field :age %></th>
+      <th class="input_caremaneger"><%= f.number_field :age %>歳</th>
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :郵便番号 %></td>
-      <th class="input_caremaneger"><%= f.number_field :postal_code %>　　　　　　※ -はつけないでください。</th>
+      <th class="input_caremaneger"><%= f.number_field :postal_code, placeholder: "-（ハイフン）はつけないでください。" %></th>
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :住所 %></td>
-      <th class="input_caremaneger"><%= f.text_area :address %></th>
+      <th class="input_caremaneger"><%= f.text_area :address, :size=>"50x3", placeholder: "住所を入力してください。" %></th>
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :携帯番号 %></td>
-      <th class="input_caremaneger"><%= f.telephone_field :phone_num,{ :max=>11, :min=>10} %></th>
+      <th class="input_caremaneger"><%= f.telephone_field :phone_num %></th>
     </tr>
     <tr>
       <td class="title_caremaneger" style="text-align:center;"><%= f.label :メールアドレス %></td>

@@ -10,7 +10,7 @@
     <%= f.date_select :day_gt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %>〜
     <%= f.date_select :day_lt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %><br/>
     <%= f.label :id, "介護記録No.：" %>
-    <%= f.search_field :id_eq, placeholder: "完全一致" %><br/>
+    <%= f.search_field :id_eq, placeholder: "介護記録No." %><br/>
     <%# 検索ボタン %>
     <%= f.submit '検索' %>
   <% end %>
