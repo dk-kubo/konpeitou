@@ -306,3 +306,42 @@ input[type="checkbox"].on-off:checked + ul{
 .search_zone legend{
   background-color: white;
 }
+
+
+
+/*log_in ================================ */
+.center_list {
+  clear: both;
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 25px 20px;
+  background: #E8EBFB;
+  border: solid 3px #BFBFDA;
+}
+.company {
+  clear: both;
+  margin-bottom: 10px;
+  padding: 3px;
+  font-size:20px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 1px solid #B4B4B4;
+}
+.login {
+  clear: both;
+  margin-right: auto;
+  margin-left: auto;
+  border:none;
+}
+.login_label {
+  font-weight: bold;
+  color: #666666;
+}
+.login tr td{
+  text-align:right;
+  padding: 5px 10px;
+}
+.login tr th{
+  text-align:left;
+}
