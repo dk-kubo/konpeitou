@@ -37,6 +37,11 @@ gem 'execjs'
 gem "ransack"
 
 gem 'devise'
+
+gem 'fullcalendar-rails'
+
+gem 'momentjs-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

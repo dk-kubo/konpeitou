@@ -9,12 +9,18 @@
 <body>
 <header class="navbar">
 	<div class="container">
-		<div id="logo"><%=link_to "こんぺいとう基幹システム",root_path %></div>
+		<div id="logo"><%=link_to "こんぺいとう基幹システム",index_top_path %></div>
 	</div>
 	<div>
 		<ul class="header-right">
-
-
+			<% if user_signed_in? %>
+    			<li>こんにちは <strong><%= current_user.name %></strong> さん</li>
+    			<li style="height: 65px;"><%= link_to 'プロフィール変更', edit_user_registration_path %> |</li>
+    			<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete  %></li>
+			<% else %>
+				<li style="height: 65px;"><%= link_to "新規登録", new_user_registration_path  %> |</li>
+				<li><%= link_to "ログイン", new_user_session_path %></li>
+			<% end %>
 		</ul>
 	</div>
 </header>
@@ -57,6 +63,9 @@
 	</ul>
 </div>
 
+<% if notice %>
+	<p class="alert"><%= alert %></p>
+<% end %>
 
 <!--ここに本文-->
 <div class="main">

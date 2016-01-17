@@ -1,5 +1,6 @@
 class CaremanagersController < ApplicationController
   before_action :set_caremanager, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /caremanagers
   # GET /caremanagers.json

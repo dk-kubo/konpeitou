@@ -67,6 +67,10 @@ GEM
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    fullcalendar-rails (2.6.0.0)
+      jquery-rails (>= 4.0.5, < 5.0.0)
+      jquery-ui-rails (>= 5.0.2)
+      momentjs-rails (>= 2.9.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
@@ -84,6 +88,8 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
     libv8 (3.16.14.13)
     loofah (2.0.3)
@@ -94,6 +100,8 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    momentjs-rails (2.11.0)
+      railties (>= 3.1)
     multi_json (1.11.2)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
@@ -215,11 +223,13 @@ DEPENDENCIES
   enumerize
   execjs
   foundation-icons-sass-rails
+  fullcalendar-rails
   hirb (~> 0.7.2)
   hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  momentjs-rails
   pry-byebug
   pry-doc
   pry-rails

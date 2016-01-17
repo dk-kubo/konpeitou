@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ 
+ *= require fullcalendar
  *= require_tree .
  *= require_self
  */
@@ -152,6 +154,10 @@ p {
   color: white;
   border-left: 1px solid #dddddd;
   border-color: #333333;
+}
+.header-right li a:hover{
+  color:white;
+  background-color: #333333;
 }
 
 /* サイドバー ================================ */

@@ -1,5 +1,6 @@
 class CareRecordsController < ApplicationController
   before_action :set_care_record, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /care_records
   # GET /care_records.json

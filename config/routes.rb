@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  get 'home/index'
+
   resources :care_records
   match '/contact', to: 'care_records#contact', via: 'get'
   resources :customers
   resources :caremanagers
 
-  root 'care_records#index_top'
+  #root 'care_records#index_top'
+  match '/index_top', to: 'care_records#index_top', via: 'get'
 
   resources :staffs
 
@@ -63,5 +67,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
+  root to: "home#index"  # 追記した
+  get 'home/index'  # rails g controllerで作られた
 end

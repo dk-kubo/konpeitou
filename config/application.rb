@@ -26,5 +26,6 @@ module Gatebook
 
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
+    config.assets.precompile += ['application-print.css']
   end
 end

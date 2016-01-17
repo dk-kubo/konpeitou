@@ -17,12 +17,6 @@ class Customer < ActiveRecord::Base
     validates :home_num, length: { in: 10..11 }
     validates :phone_num, length: { is: 11 }
 
-  def add_error_sample
-    # nameが空のときにエラーメッセージを追加する
-    if name.blank?
-      errors[:base] << "氏名は必ず入力して下さい"
-    end
-	end
 
 
 end
