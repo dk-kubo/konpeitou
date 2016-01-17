@@ -56,10 +56,12 @@ a:hover {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;  
-  float: left;
+  float: right;
 }
 .sidebar
 {
+  margin-top: 6px;
+  position: fixed;
   height: 700px;
   width: 20%;
   float: left;
