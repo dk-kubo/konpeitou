@@ -39,9 +39,12 @@ ActiveRecord::Schema.define(version: 20160117090114) do
     t.integer  "meal_size"
     t.text     "contact"
     t.text     "opinion"
+    t.integer  "customer_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
+
+  add_index "care_records", ["customer_id"], name: "index_care_records_on_customer_id"
 
   create_table "caremanagers", force: :cascade do |t|
     t.string   "name"

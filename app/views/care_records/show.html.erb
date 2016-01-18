@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<center>
+  <h1>さんの介護記録</h1>
+</center>
 
 <table class="detail_table_care_record">
   <tr>
@@ -83,7 +86,7 @@
 
 <%= link_to '編集', edit_care_record_path(@care_record) %> |
 <%= link_to '一覧', care_records_path %> |
-<%= link_to '連絡帳', contact_path(@care_record) %>
+<%= link_to '連絡帳', care_record_contact_path(@care_record) %>
 
 
 

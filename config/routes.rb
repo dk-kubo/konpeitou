@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
 
-  resources :care_records
-  match '/contact', to: 'care_records#contact', via: 'get'
+  resources :care_records do
+    resource :contact, :only => [:show]
+  end
+
+
   resources :customers
   resources :caremanagers
 

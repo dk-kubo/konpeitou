@@ -118,10 +118,10 @@
 
 <nav class="drawer-menu">
   <ul>
-    <li><%= link_to '介護記録作成', edit_customer_path(@customer) %></li>
-    <li><a href="#">連絡帳</a></li>
+    <li><%= link_to '介護記録作成', new_care_record_path(@customer) %></li>
+    <li><a href="#">介護記録一覧</a></li>
+    <li><a href="#">連絡帳一覧</a></li>
     <li><%= link_to '編集', edit_customer_path(@customer) %></li>
-    <li><%= link_to '一覧', customers_path %></li>
-    <li><a href="#">Side Menu Name</a></li>
+    <li><%= link_to '利用者一覧', customers_path %></li>
   </ul>
 </nav>

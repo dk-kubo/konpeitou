@@ -27,8 +27,8 @@ class CreateCareRecords < ActiveRecord::Migration
       t.integer :meal_size
       t.text :contact
       t.text :opinion
+      t.integer :customer_id, index: true, foreign_key: true
       t.references :staff_id, index: true, foreign_key: true
-      t.references :customer_id, index: true, foreign_key: true
 
       t.timestamps null: false
     end

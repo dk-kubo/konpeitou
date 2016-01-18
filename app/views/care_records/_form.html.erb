@@ -1,7 +1,7 @@
 <%= form_for(@care_record) do |f| %>
   <% if @care_record.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@care_record.errors.count, "error") %> prohibited this care_record from being saved:</h2>
+      <h2><%= pluralize(@care_record.errors.count, "error") %> 箇所入力されていない為、登録できません。:</h2>
 
       <ul>
       <% @care_record.errors.full_messages.each do |message| %>

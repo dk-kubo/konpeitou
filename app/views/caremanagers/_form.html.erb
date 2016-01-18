@@ -1,7 +1,7 @@
 <%= form_for(@caremanager) do |f| %>
   <% if @caremanager.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@caremanager.errors.count, "error") %> prohibited this caremanager from being saved:</h2>
+      <h2><%= pluralize(@caremanager.errors.count, "error") %> 箇所入力されていない為、登録できません。:</h2>
 
       <ul>
       <% @caremanager.errors.full_messages.each do |message| %>
