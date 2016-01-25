@@ -18,6 +18,36 @@
 </fieldset>
 
 <br>
+<h3>入所者一覧</h3>
+<table>
+  <thead>
+    <tr class="title_cus">
+      <th>受付日</th>
+      <th>被保険者番号</th>
+      <th>名前</th>
+      <th>性別</th>
+      <th>生年月日</th>
+      <th>自宅番号</th>
+      <th>メール</th>
+      <th>在籍ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers1.each do |customer| %>
+      <tr>
+        <td><%= customer.reception_day.strftime("%Y年%m月%d日") %></td>
+        <td><%= customer.insure_num %></td>
+        <td><%= link_to customer.name ,customer %></td>
+        <td><%= customer.sex_text %></td>
+        <td><%= customer.birth.strftime("%Y年%m月%d日") %></td>
+        <td><%= customer.home_num %></td>
+        <td><%= customer.mail %></td>
+        <td><%= customer.status_text %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <table>
   <thead>
@@ -32,20 +62,10 @@
       <th>在籍ステータス</th>
     </tr>
   </thead>
-
+<br>
+<br>
+<h3>退会者一覧</h3>
   <tbody>
-    <% @customers.each do |customer| %>
-      <tr>
-        <td><%= customer.reception_day.strftime("%Y年%m月%d日") %></td>
-        <td><%= customer.insure_num %></td>
-        <td><%= link_to customer.name ,customer %></td>
-        <td><%= customer.sex_text %></td>
-        <td><%= customer.birth.strftime("%Y年%m月%d日") %></td>
-        <td><%= customer.home_num %></td>
-        <td><%= customer.mail %></td>
-        <td><%= customer.status_text %></td>
-      </tr>
-    <% end %>
     <% @customers2.each do |customer| %>
       <tr>
         <td><%= customer.reception_day.strftime("%Y年%m月%d日") %></td>

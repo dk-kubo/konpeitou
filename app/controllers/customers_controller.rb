@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.where(status:1)
+    @customers1 = Customer.where(status:1)
     @customers2 = Customer.where(status:2)
     @q        = Customer.search(params[:q])
     @customers = @q.result(distinct: true)

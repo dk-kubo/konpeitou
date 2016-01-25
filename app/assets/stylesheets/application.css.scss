@@ -25,7 +25,9 @@
   margin: 0 auto;  
 }
 
-
+#alert{
+  color: red;
+}
 
 ul, li {
   list-style-type: none;
@@ -315,7 +317,7 @@ input[type="checkbox"].on-off:checked + ul{
 .center_list {
   clear: both;
   width: 500px;
-  margin-right: auto;
+  margin-right: 350px;
   margin-left: auto;
   padding: 25px 20px;
   background: #E8EBFB;
