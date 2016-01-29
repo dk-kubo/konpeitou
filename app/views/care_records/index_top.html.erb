@@ -10,6 +10,7 @@
       <th>到着時間</th>
       <th>出発時間</th>
       <th>体温</th>
+      <th>ステータス</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -23,6 +24,7 @@
         <td><%= care_record.arrive_time.strftime("%H:%M") %></td>
         <td><%= care_record.leave_time.strftime("%H:%M") %></td>
         <td><%= care_record.temperature %>度</td>
+        <td><%= care_record.status_text %></td>
         <td><%= link_to '削除', care_record, method: :delete, data: { confirm: '削除すると復元できませんがよろしいですか？' } %></td>
       </tr>
     <% end %>

@@ -48,10 +48,10 @@
     <tr>
       <td class="title_care_record"><%= f.label :処置 %></td>
       <th class="input_care_record">
-        <%= f.check_box "treatment", {multiple: true,checked: @care_record.treatment.include?("目薬")}, "目薬",nil %>目薬
-        <%= f.check_box "treatment", {multiple: true,checked: @care_record.treatment.include?("軟膏")}, "軟膏",nil %>軟膏
-        <%= f.check_box "treatment", {multiple: true,checked: @care_record.treatment.include?("うがい手洗い")}, "うがい手洗い",nil %>うがい手洗い
-        <%= f.check_box "treatment", {multiple: true,checked: @care_record.treatment.include?("口腔ケア")}, "口腔ケア",nil %>口腔ケア
+        <%= f.check_box "treatment", {multiple: true}, "目薬",nil %>目薬
+        <%= f.check_box "treatment", {multiple: true}, "軟膏",nil %>軟膏
+        <%= f.check_box "treatment", {multiple: true}, "うがい手洗い",nil %>うがい手洗い
+        <%= f.check_box "treatment", {multiple: true}, "口腔ケア",nil %>口腔ケア
       </th>
     </tr>
     <tr>
@@ -65,11 +65,11 @@
     <tr>
       <td class="title_care_record"><%= f.label :外での歩行練習 %></td>
       <th class="input_care_record">
-        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("見守り")}, "見守り",nil %>見守り
-        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("杖")}, "杖",nil %>杖
-        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("腕組み")}, "腕組み",nil %>腕組み
-        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("シルバーカー")}, "シルバーカー",nil %>シルバーカー
-        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("車椅子")}, "車椅子",nil %>車椅子
+        <%= f.check_box "gait_training", {multiple: true}, "見守り",nil %>見守り
+        <%= f.check_box "gait_training", {multiple: true}, "杖",nil %>杖
+        <%= f.check_box "gait_training", {multiple: true}, "腕組み",nil %>腕組み
+        <%= f.check_box "gait_training", {multiple: true}, "シルバーカー",nil %>シルバーカー
+        <%= f.check_box "gait_training", {multiple: true}, "車椅子",nil %>車椅子
       </th>
     </tr>
     <tr>
@@ -154,11 +154,11 @@
     <tr>
       <td class="title_care_record"><%= f.label :施術内容 %></td>
       <th class="input_care_record">
-        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("体操")}, "体操",nil %>体操
-        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("発声")}, "発声",nil %>発声
-        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("機能訓練")}, "機能訓練",nil %>機能訓練
-        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("手洗いうがい")}, "手洗いうがい",nil %>手洗いうがい
-        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("散歩")}, "散歩",nil %>散歩
+        <%= f.check_box "training", {multiple: true}, "体操",nil %>体操
+        <%= f.check_box "training", {multiple: true}, "発声",nil %>発声
+        <%= f.check_box "training", {multiple: true}, "機能訓練",nil %>機能訓練
+        <%= f.check_box "training", {multiple: true}, "手洗いうがい",nil %>手洗いうがい
+        <%= f.check_box "training", {multiple: true}, "散歩",nil %>散歩
       </th>
     </tr>
     <tr>
@@ -189,6 +189,10 @@
     <tr>
       <td class="title_care_record"><%= f.label :ご家族からのご意見連絡等 %></td>
       <th class="input_care_record"><%= f.text_area :opinion, :size=>"60x2" %></th>
+    </tr>
+    <tr>
+      <td class="title_care_record"><%= f.label :ステータス %></td>
+      <th class="input_care_record"><%= f.select :status, CareRecord.status.options , :size=>"60x2"%></th>
     </tr>
   </table>
   <div class="actions">

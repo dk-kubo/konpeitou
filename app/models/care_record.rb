@@ -3,4 +3,7 @@ class CareRecord < ActiveRecord::Base
   belongs_to :customer_id, foreign_key: "customer_id"
 
 
+	extend Enumerize
+
+	enumerize :status, :in => { midstream: 1, complete: 2 }, scope: :true
 end

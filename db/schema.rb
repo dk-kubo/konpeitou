@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117090114) do
+ActiveRecord::Schema.define(version: 20160129080445) do
 
   create_table "care_records", force: :cascade do |t|
     t.date     "day"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160117090114) do
     t.integer  "customer_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "status"
   end
 
   add_index "care_records", ["customer_id"], name: "index_care_records_on_customer_id"
