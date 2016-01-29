@@ -80,6 +80,6 @@ class CareRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def care_record_params
-      params.require(:care_record).permit(:day, :arrive_time, :leave_time, :blood_pressure, :pulse, :temperature, :medichine, :treatment, :dietary_intake, :water_intake, :gait_training, :distance, :toilet, :stretch, :oral_stretch, :recreation, :form, :act, :detachable, :training, :walking, :rec_name, :bathing, :meal_size, :contact, :opinion, :staff_id_id, :customer_id)
+      params.require(:care_record).permit(:day, :arrive_time, :leave_time, :blood_pressure, :pulse, :temperature, :medichine, { :treatment => [] }, :dietary_intake, :water_intake,{ :gait_training => [] }, :distance, :toilet, :stretch, :oral_stretch, :recreation, :form, :act, :detachable, { :training => [] }, :walking, :rec_name  ,:bathing, :meal_size, :contact, :opinion, :staff_id_id, :customer_id)
     end
 end

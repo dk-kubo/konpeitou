@@ -48,14 +48,10 @@
     <tr>
       <td class="title_care_record"><%= f.label :処置 %></td>
       <th class="input_care_record">
-        <%= f.radio_button(:treatment, "目薬") %>
-        <%= f.label :treatment, '目薬', :value => "目薬" %>
-        <%= f.radio_button(:treatment, "軟膏") %>
-        <%= f.label :treatment, '軟膏', :value => "軟膏" %>
-        <%= f.radio_button(:treatment, "うがい手洗い") %>
-        <%= f.label :treatment, 'うがい手洗い', :value => "うがい手洗い" %>
-        <%= f.radio_button(:treatment, "口腔ケア") %>
-        <%= f.label :treatment, '口腔ケア', :value => "口腔ケア" %>
+        <%= f.check_box "treatment", {multiple: true,checked: @care_record.treatment.include?("目薬")}, "目薬",nil %>目薬
+        <%= f.check_box "treatment", {multiple: true,checked: @care_record.treatment.include?("軟膏")}, "軟膏",nil %>軟膏
+        <%= f.check_box "treatment", {multiple: true,checked: @care_record.treatment.include?("うがい手洗い")}, "うがい手洗い",nil %>うがい手洗い
+        <%= f.check_box "treatment", {multiple: true,checked: @care_record.treatment.include?("口腔ケア")}, "口腔ケア",nil %>口腔ケア
       </th>
     </tr>
     <tr>
@@ -68,7 +64,13 @@
     </tr>
     <tr>
       <td class="title_care_record"><%= f.label :外での歩行練習 %></td>
-      <th class="input_care_record"><%= f.text_field :gait_training %></th>
+      <th class="input_care_record">
+        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("見守り")}, "見守り",nil %>見守り
+        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("杖")}, "杖",nil %>杖
+        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("腕組み")}, "腕組み",nil %>腕組み
+        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("シルバーカー")}, "シルバーカー",nil %>シルバーカー
+        <%= f.check_box "gait_training", {multiple: true,checked: @care_record.gait_training.include?("車椅子")}, "車椅子",nil %>車椅子
+      </th>
     </tr>
     <tr>
       <td class="title_care_record"><%= f.label :距離 %></td>
@@ -112,7 +114,7 @@
       </th>
     </tr>
     <tr>
-      <td class="title_care_record"><%= f.label :形態 %></td>
+      <td class="title_care_record"><%= f.label :入浴 %></td>
       <th class="input_care_record">
         <%= f.radio_button(:bathing, "一般入浴") %>
         <%= f.label :bathing, '一般入浴', :value => "一般入浴" %>
@@ -151,7 +153,13 @@
     </tr>
     <tr>
       <td class="title_care_record"><%= f.label :施術内容 %></td>
-      <th class="input_care_record"><%= f.text_field :training %></th>
+      <th class="input_care_record">
+        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("体操")}, "体操",nil %>体操
+        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("発声")}, "発声",nil %>発声
+        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("機能訓練")}, "機能訓練",nil %>機能訓練
+        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("手洗いうがい")}, "手洗いうがい",nil %>手洗いうがい
+        <%= f.check_box "training", {multiple: true,checked: @care_record.training.include?("散歩")}, "散歩",nil %>散歩
+      </th>
     </tr>
     <tr>
       <td class="title_care_record"><%= f.label :散歩 %></td>

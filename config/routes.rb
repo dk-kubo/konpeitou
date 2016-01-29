@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resource :contact, :only => [:show]
   end
 
+  match '/contacts', to: 'contacts#index', via: 'get'
+
 
   resources :customers
   resources :caremanagers

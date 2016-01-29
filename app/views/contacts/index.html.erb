@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<center>
+  <h1>連絡帳一覧</h1>
+</center>
+
+<fieldset class="search_zone"><legend>検索</legend>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :name_start, "日付：" %>
+    <%= f.date_select :day_gt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %>〜
+    <%= f.date_select :day_lt, {include_blank: true, use_month_numbers: true, date_separator: ' / '}, class: "form-control" %><br/>
+    <%= f.label :id, "連絡帳No.：" %>
+    <%= f.search_field :id_eq, placeholder: "介護記録No." %><br/>
+    <%# 検索ボタン %>
+    <%= f.submit '検索' %>
+  <% end %>
+</fieldset>
+<br>
+
+<table>
+  <thead>
+    <tr class="title_care_record">
+      <th>介護記録No.</th>
+      <th>日付</th>
+      <th>利用者氏名</th>
+      <th>到着時間</th>
+      <th>出発時間</th>
+      <th>体温</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @care_records.each do |care_record| %>
+      <tr>
+        <td><%= link_to care_record.id, care_record_contact_path(:care_record_id) %></td>
+        <td><%= care_record.day.strftime("%Y年%m月%d日") %></td>
+        <td>名前が入る予定</td>
+        <td><%= care_record.arrive_time.strftime("%H:%M") %></td>
+        <td><%= care_record.leave_time.strftime("%H:%M") %></td>
+        <td><%= care_record.temperature %>度</td>
+        <td><%= link_to '削除', care_record, method: :delete, data: { confirm: '削除すると復元できませんがよろしいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to '新規作成', new_care_record_path %>

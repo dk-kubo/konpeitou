@@ -4,6 +4,13 @@ class ContactsController < ApplicationController
   def show
     @care_record = CareRecord.find(params[:care_record_id])
   end
+
+  def index
+    @care_records = CareRecord.all
+    @q        = CareRecord.search(params[:q])
+    @care_records = @q.result(distinct: true)
+  end
+
 	
 	private
     # Use callbacks to share common setup or constraints between actions.
