@@ -5,39 +5,36 @@
 </center>
 
 <table class="detail_table_cus">
-  <tr>
-    <td class="title_cus" style="text-align:center;"><strong>作成日</strong></td>
-    <th class="input_cus"><%= @customer.created_at.strftime("%Y年%m月%d日 %H時%M分") %></th>
-  </tr>
-  <tr>
-    <td class="title_cus" style="text-align:center;"><strong>受付日</strong></td>
-    <th class="input_cus"><%= @customer.reception_day.strftime("%Y年%m月%d日") %></th>
-  </tr>
+  <td colspan="4" class="head_customer" style="text-align:center;">基本情報</td>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>被保険者番号</strong></td>
     <th class="input_cus"><%= @customer.insure_num %></th>
+    <td class="title_cus" style="text-align:center;"><strong>受付日</strong></td>
+    <th class="input_cus"><%= @customer.reception_day.strftime("%Y年%m月%d日") %></th> 
   </tr>
   <tr>
-    <td class="title_cus" style="text-align:center;"><strong>性別</strong></td>
-    <th class="input_cus"><%= @customer.sex_text %></th>
+    <td class="title_cus" style="text-align:center;"><strong>作成日</strong></td>
+    <th class="input_cus"><%= @customer.created_at.strftime("%Y年%m月%d日 %H時%M分") %></th>
+    <td class="title_cus" style="text-align:center;"><strong>更新日</strong></td>
+    <th class="input_cus"><%= @customer.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>生年月日</strong></td>
     <th class="input_cus"><%= @customer.birth.strftime("%Y年%m月%d日") %></th>
+    <td class="title_cus" style="text-align:center;"><strong>性別</strong></td>
+    <th class="input_cus"><%= @customer.sex_text %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>郵便番号</strong></td>
     <th class="input_cus"><%= @customer.postal_code %></th>
   </tr>
   <tr>
-    <td class="title_cus_address" style="text-align:center;"><strong>住所</strong></td>
-    <th class="input_cus_address"><%= @customer.address %></th>
+    <td class="title_cus" style="text-align:center;"><strong>住所</strong></td>
+    <th colspan="3" class="input_cus"><%= @customer.address %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>自宅番号</strong></td>
     <th class="input_cus"><%= @customer.home_num %></th>
-  </tr>
-  <tr>
     <td class="title_cus" style="text-align:center;"><strong>携帯番号</strong></td>
     <th class="input_cus"><%= @customer.phone_num %></th>
   </tr>
@@ -47,18 +44,17 @@
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>メールアドレス</strong></td>
-    <th class="input_cus"><%= @customer.mail %></th>
+    <th colspan="3" class="input_cus"><%= @customer.mail %></th>
   </tr>
 </table>
 
 <table class="detail_table_cus">  
-  <tr>
-    <%= cus_family_title(@cus_families) %>
-    <th class="title_cusfami_name" style="text-align:center;"><strong>氏名</strong></th>
-    <th class="title_cusfami_relation" style="text-align:center;"><strong>続柄</strong></th>
-    <th class="title_cusfami_living" style="text-align:center;"><strong>同居・別居</strong></th>
-    <th class="title_cusfami_address" style="text-align:center;"><strong>住所</strong></th>
-    <th class="title_cusfami_contact" style="text-align:center;"><strong>連絡先</strong></th>
+  <tr><%= cus_family_title(@cus_families) %>
+      <th class="title_cusfami_name" style="text-align:center;"><strong>氏名</strong></th>
+      <th class="title_cusfami_relation" style="text-align:center;"><strong>続柄</strong></th>
+      <th class="title_cusfami_living" style="text-align:center;"><strong>同居・別居</strong></th>
+      <th class="title_cusfami_address" style="text-align:center;"><strong>住所</strong></th>
+      <th class="title_cusfami_contact" style="text-align:center;"><strong>連絡先</strong></th>
   </tr>
   <% @cus_families.each do |cus_family| %>
   <tr>
@@ -74,36 +70,28 @@
 <table class="detail_table_cus">
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>相談の経緯</strong></td>
-    <th class="input_cus"><%= @customer.history_of_consul %></th>
+    <th colspan="3" class="input_cus"><%= @customer.history_of_consul %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>主訴・要望</strong></td>
-    <th class="input_cus"><%= @customer.demand %></th>
+    <th colspan="3" class="input_cus"><%= @customer.demand %></th>
   </tr>
   <tr>
     <td class="title_cus" style="text-align:center;"><strong>世帯</strong></td>
     <th class="input_cus"><%= @customer.household_text %></th>
-  </tr>
-  <tr>
     <td class="title_cus" style="text-align:center;"><strong>家族状況</strong></td>
     <th class="input_cus"><%= @customer.family_situation %></th>
   </tr>
   <tr>
-    <td class="title_cus" style="text-align:center;"><strong>更新日</strong></td>
-    <th class="input_cus"><%= @customer.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></th>
-  </tr>
-  <tr>
     <td class="title_cus" style="text-align:center;"><strong>在籍ステータス</strong></td>
     <th class="input_cus"><%= @customer.status_text %></th>
-  </tr>
-  <tr>
-    <td class="title_cus" style="text-align:center;"><strong>担当ケアマネージャー</strong></td>
+    <td class="title_cus" style="text-align:center;"><strong style="font-size:10px;">担当ケアマネージャー</strong></td>
     <th class="input_cus"><%= @customer.caremanager.name %></th>
   </tr>
 </table>
 <p></p>
 <div class="btn_zone">
-  <%= link_to '削除', customers_path(@customer), method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在籍ステータス」を変更してください。それでもよろしいですか？' }, class: "delete_btn" %>
+  <%= link_to '削除', customers_path(@customer), method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在籍ステータス」を変更してください。それでもよろしいですか？' }, class: "delete_btn" %><br>
 </div>
 
 <input type="checkbox" class="check" id="checked">

@@ -5,11 +5,10 @@
 </center>
 
 <table class="detail_table_staff">
+  <td colspan="4" class="head_staff" style="text-align:center;">基本情報</td>
   <tr>
     <td class="title_staff" style="text-align:center;"><strong>性別</strong></td>
     <th class="input_staff"><%= @staff.sex_text %></th>
-  </tr>
-  <tr>
     <td class="title_staff" style="text-align:center;"><strong>生年月日</strong></td>
     <th class="input_staff"><%= @staff.birth.strftime("%Y年%m月%d日") %></th>
   </tr>
@@ -23,25 +22,21 @@
   </tr>
   <tr>
     <td class="title_staff" style="text-align:center;"><strong>住所</strong></td>
-    <th class="input_staff"><%= @staff.address %></th>
+    <th colspan="3" class="input_staff"><%= @staff.address %></th>
   </tr>
   <tr>
     <td class="title_staff" style="text-align:center;"><strong>電話番号</strong></td>
     <th class="input_staff"><%= @staff.phone_num %></th>
-  </tr>
-  <tr>
     <td class="title_staff" style="text-align:center;"><strong>自宅番号</strong></td>
     <th class="input_staff"><%= @staff.home_num %></th>
   </tr>
   <tr>
     <td class="title_staff" style="text-align:center;"><strong>メールアドレス</strong></td>
-    <th class="input_staff"><%= @staff.mail %></th>
+    <th colspan="3" class="input_staff"><%= @staff.mail %></th>
   </tr>
   <tr>
     <td class="title_staff" style="text-align:center;"><strong>役職</strong></td>
     <th class="input_staff"><%= @staff.role_text %></th>
-  </tr>
-  <tr>
     <td class="title_staff" style="text-align:center;"><strong>在籍ステータス</strong></td>
     <th class="input_staff"><%= @staff.status_text %></th>
   </tr>

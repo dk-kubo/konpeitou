@@ -4,85 +4,70 @@
 </center>
 
 <table class="detail_table_care_record">
+  <td colspan="4" class="head_caremaneger" style="text-align:center;">基本情報</td>
   <tr>
     <td class="title_care_record"><strong>日付</strong></td>
-    <th class="input_care_record"><%= @care_record.day.strftime("%Y年%m月%d日") %></th>
+    <th colspan="3" class="input_care_record"><%= @care_record.day.strftime("%Y年%m月%d日") %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>到着時間</strong></td>
     <th class="input_care_record"><%= @care_record.arrive_time.strftime("%H:%M") %></th>
-  </tr>
-  <tr>
     <td class="title_care_record"><strong>出発時間</strong></td>
     <th class="input_care_record"><%= @care_record.leave_time.strftime("%H:%M") %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>血圧</strong></td>
     <th class="input_care_record"><%= @care_record.blood_pressure %></th>
-  </tr>
-  <tr>
     <td class="title_care_record"><strong>脈</strong></td>
     <th class="input_care_record"><%= @care_record.pulse %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>体温</strong></td>
     <th class="input_care_record"><%= @care_record.temperature %></th>
-  </tr>
-  <tr>
     <td class="title_care_record"><strong>服薬</strong></td>
     <th class="input_care_record"><%= @care_record.medichine %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>処置</strong></td>
-    <th class="input_care_record"><%= @care_record.treatment %></th>
+    <th colspan="3" class="input_care_record"><%= @care_record.treatment %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>食事摂取量</strong></td>
     <th class="input_care_record"><%= @care_record.dietary_intake %>割</th>
-  </tr>
-  <tr>
     <td class="title_care_record"><strong>水分摂取量</strong></td>
     <th class="input_care_record"><%= @care_record.water_intake %>CC</th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>外での歩行練習</strong></td>
-    <th class="input_care_record"><%= @care_record.gait_training %></th>
+    <th colspan="3" class="input_care_record"><%= @care_record.gait_training %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>距離</strong></td>
     <th class="input_care_record"><%= @care_record.distance %>m</th>
-  </tr>
-  <tr>
     <td class="title_care_record"><strong>トイレの回数</strong></td>
     <th class="input_care_record"><%= @care_record.toilet %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>体操</strong></td>
     <th class="input_care_record"><%= @care_record.stretch %></th>
-  </tr>
-  <tr>
     <td class="title_care_record"><strong>口腔体操</strong></td>
     <th class="input_care_record"><%= @care_record.oral_stretch %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>レクリエーション</strong></td>
     <th class="input_care_record"><%= @care_record.recreation %></th>
-  </tr>
-  <tr>
     <td class="title_care_record"><strong>形態</strong></td>
     <th class="input_care_record"><%= @care_record.bathing %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>行為</strong></td>
     <th class="input_care_record"><%= @care_record.act %></th>
-  </tr>
-  <tr>
     <td class="title_care_record"><strong>着脱</strong></td>
     <th class="input_care_record"><%= @care_record.detachable %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>ステータス</strong></td>
-    <th class="input_care_record"><%= @care_record.status_text %></th>
+    <th colspan="3" class="input_care_record"><%= @care_record.status_text %></th>
   </tr>
 </table>
 
