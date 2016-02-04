@@ -122,6 +122,13 @@
   </tr>
 </table>
 
+<div class="field">
+  <%= image_tag @customer.image.url if @customer.image? %>
+  <%= f.label :image %><br>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache %>
+</div>
+
 <div class="actions">
   <%= f.submit '登録', :confirm => '登録してもよろしいですか？', :disable_with =>'登録中...' %>
 </div>

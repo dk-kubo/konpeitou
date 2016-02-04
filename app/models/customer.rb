@@ -6,6 +6,8 @@ class Customer < ActiveRecord::Base
 
 	accepts_nested_attributes_for :cus_families, allow_destroy: true
 
+  mount_uploader :image, ImageUploader
+
     extend Enumerize
 
     enumerize :sex, :in => [:male, :female], scope: true

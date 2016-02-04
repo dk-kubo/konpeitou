@@ -7,7 +7,9 @@
   <td colspan="4" class="head_caremaneger" style="text-align:center;">基本情報</td>
   <tr>
     <td class="title_care_record"><strong>日付</strong></td>
-    <th colspan="3" class="input_care_record"><%= @care_record.day.strftime("%Y年%m月%d日") %></th>
+    <th class="input_care_record"><%= @care_record.day.strftime("%Y年%m月%d日") %></th>
+    <td class="title_care_record"><strong>作成者</strong></td>
+    <th class="input_care_record"><%= @care_record.staff.name %></th>
   </tr>
   <tr>
     <td class="title_care_record"><strong>到着時間</strong></td>
@@ -73,11 +75,6 @@
 
 
 
-<%= link_to '編集', edit_care_record_path(@care_record) %> |
-<%= link_to '一覧', care_records_path %> |
-<%= link_to '連絡帳', care_record_contact_path(@care_record) %>
-
-
 
 <input type="checkbox" class="check" id="checked">
 <label class="menu-btn" for="checked">
@@ -91,5 +88,6 @@
         <ul>
             <li><%= link_to '編集', edit_care_record_path(@care_record) %></li>
             <li><%= link_to '一覧', care_records_path %></li>
+            <li><%= link_to '連絡帳', care_record_contact_path(@care_record) %></li>
         </ul>
 </nav>

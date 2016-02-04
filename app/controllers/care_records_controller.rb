@@ -17,6 +17,8 @@ class CareRecordsController < ApplicationController
   # GET /care_records/1
   # GET /care_records/1.json
   def show
+    @care_record = CareRecord.find(params[:id])
+    @staffs = Staff.where(staff_id: @staff_id)
   end
 
   # GET /care_records/new
@@ -80,6 +82,6 @@ class CareRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def care_record_params
-      params.require(:care_record).permit(:day, :arrive_time, :leave_time, :blood_pressure, :pulse, :temperature, :medichine, { :treatment => [] }, :dietary_intake, :water_intake,{ :gait_training => [] }, :distance, :toilet, :stretch, :oral_stretch, :recreation, :form, :act, :detachable, { :training => [] }, :walking, :rec_name  ,:bathing, :meal_size, :contact, :opinion,:status, :staff_id_id, :customer_id)
+      params.require(:care_record).permit(:day, :arrive_time, :leave_time, :blood_pressure, :pulse, :temperature, :medichine, { :treatment => [] }, :dietary_intake, :water_intake,{ :gait_training => [] }, :distance, :toilet, :stretch, :oral_stretch, :recreation, :form, :act, :detachable, { :training => [] }, :walking, :rec_name  ,:bathing, :meal_size, :contact, :opinion,:status, :staff_id_id, :customer_id, :staff_id)
     end
 end
