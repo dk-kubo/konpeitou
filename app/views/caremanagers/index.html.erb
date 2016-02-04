@@ -19,6 +19,33 @@
 </fieldset>
 
 <br>
+<h3>在職者一覧</h3>
+<table>
+  <thead>
+    <tr class="title_caremaneger">
+      <th>ケアマネ番号</th>
+      <th>名前</th>
+      <th>性別</th>
+      <th>年齢</th>
+      <th>電話番号</th>
+      <th>所属社名</th>
+      <th>在職ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @caremanagers1.each do |caremanager| %>
+      <tr>
+        <td><%= caremanager.id %></td>
+        <td><%= link_to caremanager.name, caremanager %></td>
+        <td><%= caremanager.sex_text %></td>
+        <td><%= caremanager.age %>歳</td>
+        <td><%= caremanager.phone_num %></td>
+        <td><%= caremanager.company %></td>
+        <td><%= caremanager.status_text %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <table>
   <thead>
@@ -32,19 +59,10 @@
       <th>在職ステータス</th>
     </tr>
   </thead>
-
+  <br>
+  <br>
+  <h3>退職者一覧</h3>
   <tbody>
-    <% @caremanagers.each do |caremanager| %>
-      <tr>
-        <td><%= caremanager.id %></td>
-        <td><%= link_to caremanager.name, caremanager %></td>
-        <td><%= caremanager.sex_text %></td>
-        <td><%= caremanager.age %>歳</td>
-        <td><%= caremanager.phone_num %></td>
-        <td><%= caremanager.company %></td>
-        <td><%= caremanager.status_text %></td>
-      </tr>
-    <% end %>
     <% @caremanagers2.each do |caremanager| %>
       <tr>
         <td><%= caremanager.id %></td>

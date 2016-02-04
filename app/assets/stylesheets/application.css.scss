@@ -349,3 +349,11 @@ input[type="checkbox"].on-off:checked + ul{
 .login tr th{
   text-align:left;
 }
+/*印刷 ================================ */
+@media print{
+.navbar{display:none;} 
+.container{display:none;} 
+.sidebar{display:none;} 
+.menu-btn__text{display:none;} 
+.main{width:100%; float:none;}
+}

@@ -16,6 +16,34 @@
 </fieldset>
 
 <br>
+<h3>在職者一覧</h3>
+<table>
+  <thead>
+    <tr class="title_staff">
+      <th>スタッフ番号</th>
+      <th>名前</th>
+      <th>性別</th>
+      <th>年齢</th>
+      <th>携帯番号</th>
+      <th>役職</th>
+      <th>在職ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @staffs1.each do |staff| %>
+      <tr>
+        <td><%= staff.id %></td>
+        <td><%= link_to staff.name, staff %></td>
+        <td><%= staff.sex_text %></td>
+        <td><%= staff.age %>歳</td>
+        <td><%= staff.phone_num %></td>
+        <td><%= staff.role_text %></td>
+        <td><%= staff.status_text %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <table>
   <thead>
@@ -29,19 +57,10 @@
       <th>在職ステータス</th>
     </tr>
   </thead>
-
+  <br>
+  <br>
+  <h3>退職者一覧</h3>
   <tbody>
-    <% @staffs.each do |staff| %>
-      <tr>
-        <td><%= staff.id %></td>
-        <td><%= link_to staff.name, staff %></td>
-        <td><%= staff.sex_text %></td>
-        <td><%= staff.age %>歳</td>
-        <td><%= staff.phone_num %></td>
-        <td><%= staff.role_text %></td>
-        <td><%= staff.status_text %></td>
-      </tr>
-    <% end %>
     <% @staffs2.each do |staff| %>
       <tr>
         <td><%= staff.id %></td>

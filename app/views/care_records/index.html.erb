@@ -16,7 +16,7 @@
   <% end %>
 </fieldset>
 <br>
-
+<h3>作成途中</h3>
 <table>
   <thead>
     <tr class="title_care_record">
@@ -30,9 +30,8 @@
       <th colspan="1"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @care_records.each do |care_record| %>
+    <% @care_records1.each do |care_record| %>
       <tr>
         <td><%= link_to care_record.id,care_record %></td>
         <td><%= care_record.day.strftime("%Y年%m月%d日") %></td>
@@ -47,6 +46,38 @@
   </tbody>
 </table>
 
+
+<table>
+  <thead>
+    <tr class="title_care_record">
+      <th>介護記録No.</th>
+      <th>日付</th>
+      <th>利用者氏名</th>
+      <th>到着時間</th>
+      <th>出発時間</th>
+      <th>体温</th>
+      <th>ステータス</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <br>
+  <br>
+  <h3>作成完了</h3>
+  <tbody>
+    <% @care_records2.each do |care_record| %>
+      <tr>
+        <td><%= link_to care_record.id,care_record %></td>
+        <td><%= care_record.day.strftime("%Y年%m月%d日") %></td>
+        <td>名前が入る予定</td>
+        <td><%= care_record.arrive_time.strftime("%H:%M") %></td>
+        <td><%= care_record.leave_time.strftime("%H:%M") %></td>
+        <td><%= care_record.temperature %>度</td>
+        <td><%= care_record.status_text %></td>
+        <td><%= link_to '削除', care_record, method: :delete, data: { confirm: '削除すると復元できませんがよろしいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 

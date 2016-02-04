@@ -6,7 +6,7 @@ class CaremanagersController < ApplicationController
   # GET /caremanagers.json
 
   def index
-    @caremanagers = Caremanager.where(status:1)
+    @caremanagers1 = Caremanager.where(status:1)
     @caremanagers2 = Caremanager.where(status:2)
     @q        = Caremanager.search(params[:q])
     @caremanagers = @q.result(distinct: true)

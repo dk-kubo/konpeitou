@@ -5,7 +5,7 @@ class StaffsController < ApplicationController
   # GET /staffs
   # GET /staffs.json
   def index
-    @staffs = Staff.where(status:1)
+    @staffs1 = Staff.where(status:1)
     @staffs2 = Staff.where(status:2)
     @q        = Staff.search(params[:q])
     @staffs = @q.result(distinct: true)

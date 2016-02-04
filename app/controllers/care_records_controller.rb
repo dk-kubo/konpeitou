@@ -5,7 +5,8 @@ class CareRecordsController < ApplicationController
   # GET /care_records
   # GET /care_records.json
   def index
-    @care_records = CareRecord.all
+    @care_records1 = CareRecord.where(status:1)
+    @care_records2 = CareRecord.where(status:2)
     @q        = CareRecord.search(params[:q])
     @care_records = @q.result(distinct: true)
   end
@@ -19,6 +20,27 @@ class CareRecordsController < ApplicationController
   def show
     @care_record = CareRecord.find(params[:id])
     @staffs = Staff.where(staff_id: @staff_id)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.pdf do
+
+        # Thin ReportsでPDFを作成
+        # 先ほどEditorで作ったtlfファイルを読み込む
+        report = ThinReports::Report.new(layout: "#{Rails.root}/app/pdfs/report_pdf.tlf")
+
+        # 1ページ目を開始
+        report.start_new_page
+
+        # ブラウザでPDFを表示する
+        # disposition: "inline" によりダウンロードではなく表示させている
+        format.pdf {send_data report.generate,
+          filename:    "#{@report.id}.pdf",
+          type:        "application/pdf",
+          disposition: "inline"
+        }
+      end
+    end
   end
 
   # GET /care_records/new
