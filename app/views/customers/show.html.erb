@@ -89,10 +89,7 @@
     <th class="input_cus"><%= @customer.caremanager.name %></th>
   </tr>
 </table>
-<p></p>
-<div class="btn_zone">
-  <%= link_to '削除', customers_path(@customer), method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在籍ステータス」を変更してください。それでもよろしいですか？' }, class: "delete_btn" %><br>
-</div>
+
 
 
 <p>
@@ -118,10 +115,11 @@
 
 <nav class="drawer-menu">
   <ul>
-    <li><%= link_to '介護記録作成', new_care_record_path(@customer) %></li>
-    <li><a href="#">介護記録一覧</a></li>
-    <li><a href="#">連絡帳一覧</a></li>
     <li><%= link_to '編集', edit_customer_path(@customer) %></li>
     <li><%= link_to '利用者一覧', customers_path %></li>
+    <li><%= link_to '介護記録作成', new_care_record_path(@customer) %></li>
+    <li><%= link_to '介護記録一覧', care_records_path %></li>
+    <li><%= link_to '連絡帳一覧', contacts_path %></li>
+    <li><%= link_to '削除', customers_path(@customer), method: :delete, data: { confirm: '削除すると復元できません。退職された場合は「在籍ステータス」を変更してください。それでもよろしいですか？' } %></li>
   </ul>
 </nav>

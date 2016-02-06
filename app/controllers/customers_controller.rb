@@ -36,7 +36,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: '正常に登録されました。' }
+        format.html { redirect_to (@customer), notice: '正常に登録されました。' }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new }
@@ -69,7 +69,7 @@ class CustomersController < ApplicationController
     end
   end
 
-  private
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
       @customer = Customer.find(params[:id])

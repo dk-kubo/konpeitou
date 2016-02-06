@@ -17,6 +17,10 @@
       <th class="input_care_record"><%= f.date_select :day,{use_month_numbers: true, date_separator: ' / ' }%></th>
     </tr>
     <tr>
+      <td class="title_care_record"><%= f.label :利用者氏名 %></td>
+      <th class="input_care_record"><%= f.collection_select :customer_id, Customer.all, :id, :name%></th>
+    </tr>
+    <tr>
       <td class="title_care_record"><%= f.label :作成者 %></td>
       <th class="input_care_record"><%= f.collection_select :staff_id, Staff.all, :id, :name%></th>
     </tr>

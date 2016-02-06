@@ -3,6 +3,7 @@ class Customer < ActiveRecord::Base
   has_many :cus_families, dependent: :destroy
   belongs_to :caremanager
   has_many :care_records, dependent: :destroy
+  has_one :certification
 
 	accepts_nested_attributes_for :cus_families, allow_destroy: true
 
@@ -15,9 +16,9 @@ class Customer < ActiveRecord::Base
     enumerize :household, :in => [:alone, :elderly_only, :other], scope: true
 
     #validates :name, presence: true
-    validates :postal_code, presence: true, length: { is: 7 }
-    validates :home_num, length: { in: 10..11 }
-    validates :phone_num, length: { is: 11 }
+    #validates :postal_code, presence: true, length: { is: 7 }
+    #validates :home_num, length: { in: 10..11 }
+    #validates :phone_num, length: { is: 11 }
 
 
 

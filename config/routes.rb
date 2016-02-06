@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   match '/contacts', to: 'contacts#index', via: 'get'
 
 
-  resources :customers
+  resources :customers do
+    resource :certification, :only => [:new,:show,:edit]
+  end
+
+
   resources :caremanagers
 
   #root 'care_records#index_top'
